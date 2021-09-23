@@ -223,7 +223,7 @@
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.18f1/Editor/Data/Managed/UnityEngine/UnityEngine.UIModule.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UIElementsModule">
- <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.18f1/Editor/Data/Managed/UnityEngine/UnityEngine.UIElementsModule.dll</HintPath>
+ <HintPath>C:/Users/noesi/RiderProjects/AutoOutlineGenerator/Library/ScriptAssemblies/UnityEngine.UIElementsModule.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UIElementsNativeModule">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.18f1/Editor/Data/Managed/UnityEngine/UnityEngine.UIElementsNativeModule.dll</HintPath>
@@ -298,7 +298,7 @@
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.18f1/Editor/Data/Managed/UnityEngine/UnityEditor.SceneTemplateModule.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.UIElementsModule">
- <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.18f1/Editor/Data/Managed/UnityEngine/UnityEditor.UIElementsModule.dll</HintPath>
+ <HintPath>C:/Users/noesi/RiderProjects/AutoOutlineGenerator/Library/ScriptAssemblies/UnityEditor.UIElementsModule.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.UIElementsSamplesModule">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.18f1/Editor/Data/Managed/UnityEngine/UnityEditor.UIElementsSamplesModule.dll</HintPath>

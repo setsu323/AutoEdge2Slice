@@ -1,0 +1,4 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:Label text="でふぉると&#10;" display-tooltip-when-elided="true" style="opacity: 1;" />
+    <ui:Slider picking-mode="Ignore" label="Slider" value="42" high-value="100" style="justify-content: flex-start; flex-direction: column-reverse; align-items: center; position: absolute; top: 38px; left: 8px; height: 34px; right: 17px;" />
+</ui:UXML>
