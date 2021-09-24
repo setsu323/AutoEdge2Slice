@@ -6,7 +6,7 @@ namespace AutoOutlineGenerator.SpriteExtension
 {
     public class OutlineSerialization
     {
-        void ApplyOutline(TextureImporter textureImporter,List<Vector2[]> outline)
+        public static void ApplyOutline(TextureImporter textureImporter,List<Vector2[]> outline)
         {
             //SpriteのRectと、Pivotも欲しいな
             var mode = SpriteImportMode.Multiple;
@@ -15,7 +15,27 @@ namespace AutoOutlineGenerator.SpriteExtension
             var outlineSP = mode == SpriteImportMode.Multiple ?
                 importer.FindProperty("m_SpriteSheet.m_Sprites").GetArrayElementAtIndex(0).FindPropertyRelative("m_Outline") :
                 importer.FindProperty("m_SpriteSheet.m_Outline");
+
+            if (mode == SpriteImportMode.Multiple)
+            {
+                var spriteProperty = importer.FindProperty("m_SpriteSheet.m_Sprites");
+                for (var i = 0; i < spriteProperty.arraySize; i++)
+                {
+                    var prop = spriteProperty.GetArrayElementAtIndex(i).FindPropertyRelative("m_Outline");
+                    Apply(prop, new List<Vector2[]> {outline[0]});
+                }
+            }
+            else
+            {
+                Apply(importer.FindProperty("m_SpriteSheet.m_Outline"), outline);
+            }
             
+            
+            importer.ApplyModifiedProperties();
+        }
+
+        private static void Apply(SerializedProperty outlineSP,List<Vector2[]> outline)
+        {
             outlineSP.ClearArray();
             for (int j = 0; j < outline.Count; ++j)
             {
