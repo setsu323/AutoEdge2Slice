@@ -53,6 +53,7 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\AutoOutlineGenerator\Editor\OutlineGenerator.cs" />
+     <Compile Include="Assets\AutoOutlineGenerator\Editor\ShowOutlineWindow.cs" />
      <None Include="Assets\AutoOutlineGenerator\Editor\AutoOutlineGenerator.Editor.asmdef" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.18f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
@@ -659,6 +660,10 @@
  </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Unity.2D.Sprite.Editor.csproj">
+      <Project>{6a6900cb-3d93-e454-ed93-a62c0f275efd}</Project>
+      <Name>Unity.2D.Sprite.Editor</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

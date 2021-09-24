@@ -6,9 +6,9 @@ namespace AutoOutlineGenerator.SpriteExtension
 {
     public class OutlineSerialization
     {
-
         void ApplyOutline(TextureImporter textureImporter,List<Vector2[]> outline)
         {
+            //SpriteのRectと、Pivotも欲しいな
             var mode = SpriteImportMode.Multiple;
             var importer = new SerializedObject(textureImporter);
             
@@ -31,23 +31,35 @@ namespace AutoOutlineGenerator.SpriteExtension
             }
         }
         
-        void LoadOutline(TextureImporter textureImporter)
+        public static List<Vector2[]> LoadOutline(TextureImporter textureImporter)
         {
-            var mode = SpriteImportMode.Multiple;
+            var mode = textureImporter.spriteImportMode;
             var importer = new SerializedObject(textureImporter);
             
-            //modeに応じて必要なアウトラインの情報が異なる
-            var outlineSP = mode == SpriteImportMode.Multiple ?
-                importer.FindProperty("m_SpriteSheet.m_Sprites").GetArrayElementAtIndex(0).FindPropertyRelative("m_Outline") :
-                importer.FindProperty("m_SpriteSheet.m_Outline");
-            
-            //複数のSpriteに複数のOutlineが入っている。
-            //Outlineは複数のVector2の集合
-            
-            var outline = new List<Vector2[]>();
-            for (int j = 0; j < outlineSP.arraySize; ++j)
+            if (mode == SpriteImportMode.Multiple)
             {
-                SerializedProperty outlinePathSP = outlineSP.GetArrayElementAtIndex(j);
+                var retValue = new List<Vector2[]>();
+                var spriteProperties = importer.FindProperty("m_SpriteSheet.m_Sprites");
+                for (var i = 0; i < spriteProperties.arraySize; i++)
+                {
+                    retValue.AddRange(LoadOutline(spriteProperties.GetArrayElementAtIndex(i)
+                        .FindPropertyRelative("m_Outline")));
+                }
+
+                return retValue;
+            }
+            else
+            {
+                return LoadOutline(importer.FindProperty("m_SpriteSheet.m_Outline"));
+            }
+        }
+
+        private static List<Vector2[]> LoadOutline(SerializedProperty outlineSp)
+        {
+            var outline = new List<Vector2[]>();
+            for (int j = 0; j < outlineSp.arraySize; ++j)
+            {
+                SerializedProperty outlinePathSP = outlineSp.GetArrayElementAtIndex(j);
                 var o = new Vector2[outlinePathSP.arraySize];
                 for (int k = 0; k < outlinePathSP.arraySize; ++k)
                 {
@@ -55,6 +67,8 @@ namespace AutoOutlineGenerator.SpriteExtension
                 }
                 outline.Add(o);
             }
-        }
+
+            return outline;
+        } 
     }
 }
