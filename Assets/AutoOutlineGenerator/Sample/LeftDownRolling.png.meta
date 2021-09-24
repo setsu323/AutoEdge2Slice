@@ -11,6 +11,9 @@ TextureImporter:
   - first:
       213: 840487246121669037
     second: LeftDownRolling_2
+  - first:
+      213: -5194696969524852320
+    second: LeftDownRolling_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -172,6 +175,27 @@ TextureImporter:
       bones: []
       spriteID: da1145f72b20aab00800000000000000
       internalID: 840487246121669037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeftDownRolling_3
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 67
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a94caff0aab8e7b0800000000000000
+      internalID: -5194696969524852320
       vertices: []
       indices: 
       edges: []

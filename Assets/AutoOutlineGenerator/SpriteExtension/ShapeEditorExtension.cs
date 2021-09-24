@@ -8,6 +8,7 @@ namespace AutoOutlineGenerator.SpriteExtension
 {
     internal class ShapeEditorExtension
     {
+        //Testを行いたいなぁ……
         internal static List<SpriteOutline> GenerateSplitRectOutline(Rect actualSpriteRect,Vector2 actualPivot, float detail,
             byte alphaTolerance, ITextureDataProvider textureDataProvider)
         {
