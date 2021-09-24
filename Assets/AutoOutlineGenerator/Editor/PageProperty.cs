@@ -11,6 +11,8 @@ namespace AutoOutlineGenerator.Editor
         public Vector2Int Offset;
         public Vector2Int Standard;
 
+        public RectInt RectInt;
+
         public PageProperty(Vector2Int textureSize, Vector2Int offset, bool isCenterStandard)
         {
             if (isCenterStandard)
@@ -21,7 +23,7 @@ namespace AutoOutlineGenerator.Editor
             {
                 Standard = Vector2Int.zero;
             }
-
+            RectInt = new RectInt(offset - Standard, textureSize);
             TextureSize = textureSize;
             Offset = offset;
         }

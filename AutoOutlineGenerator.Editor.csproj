@@ -59,6 +59,7 @@
      <Compile Include="Assets\AutoOutlineGenerator\Editor\OutlineOptimizerWindow.cs" />
      <Compile Include="Assets\AutoOutlineGenerator\Editor\Edge2AutoSpriteSlicerWindow.cs" />
      <Compile Include="Assets\AutoOutlineGenerator\Editor\PageProperty.cs" />
+     <Compile Include="Assets\AutoOutlineGenerator\Editor\PageSizeFinder.cs" />
      <None Include="Assets\AutoOutlineGenerator\Editor\AutoOutlineGenerator.Editor.asmdef" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.18f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
