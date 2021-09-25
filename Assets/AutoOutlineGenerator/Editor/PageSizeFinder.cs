@@ -23,7 +23,7 @@ namespace AutoOutlineGenerator.Editor
             
             //分割するためのRectsを取得
             var rects = SplitTexture(textureRectInt.size, implicationArea.size);
-            
+            //問題はSpriteSheetに新しく追加するときはどうしたらいいのか……っていうこと
         }
 
         public List<RectInt> SplitTexture(Vector2Int textureSize,Vector2Int pageSize)
@@ -36,6 +36,8 @@ namespace AutoOutlineGenerator.Editor
                     rects.Add(new RectInt(new Vector2Int(x * pageSize.x, y * pageSize.y), pageSize));
                 }
             }
+
+            return rects;
         }
         
         /// <summary>

@@ -52,14 +52,15 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\AutoOutlineGenerator\Editor\OutlineGenerator.cs" />
-     <Compile Include="Assets\AutoOutlineGenerator\Editor\OutlineSerialization.cs" />
      <Compile Include="Assets\AutoOutlineGenerator\Editor\ShowOutlineWindow.cs" />
+     <Compile Include="Assets\AutoOutlineGenerator\Editor\OutlineGenerator.cs" />
      <Compile Include="Assets\AutoOutlineGenerator\Editor\SpriteOutline.cs" />
-     <Compile Include="Assets\AutoOutlineGenerator\Editor\OutlineOptimizerWindow.cs" />
-     <Compile Include="Assets\AutoOutlineGenerator\Editor\Edge2AutoSpriteSlicerWindow.cs" />
      <Compile Include="Assets\AutoOutlineGenerator\Editor\PageProperty.cs" />
+     <Compile Include="Assets\AutoOutlineGenerator\Editor\OutlineOptimizerWindow.cs" />
      <Compile Include="Assets\AutoOutlineGenerator\Editor\PageSizeFinder.cs" />
+     <Compile Include="Assets\AutoOutlineGenerator\Editor\OutlineSerialization.cs" />
+     <Compile Include="Assets\AutoOutlineGenerator\Editor\Edge2AutoSpriteSlicerWindow.cs" />
+     <Compile Include="Assets\AutoOutlineGenerator\Editor\OriginalSpriteWindow.cs" />
      <None Include="Assets\AutoOutlineGenerator\Editor\AutoOutlineGenerator.Editor.asmdef" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.18f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
