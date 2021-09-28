@@ -1,3 +1,5 @@
+using AutoOutlineGenerator.SpriteExtension;
+using UnityEditor.U2D.Sprites;
 using UnityEngine;
 
 namespace AutoOutlineGenerator.Editor
@@ -7,19 +9,27 @@ namespace AutoOutlineGenerator.Editor
     /// </summary>
     public class OutlineGenerator
     {
-        private Sprite _sprite;
-
         //まず、そもそもSpriteを読み込みたい……
-        
+        private ISpriteEditorDataProvider _spriteEditorDataProvider;
+        private ISpriteOutlineDataProvider _spriteOutlineDataProvider;
+        private ITextureDataProvider _textureDataProvider;
+
+        public void Set(ISpriteEditorDataProvider spriteEditorDataProvider)
+        {
+            _spriteEditorDataProvider = spriteEditorDataProvider;
+            _spriteOutlineDataProvider = spriteEditorDataProvider.GetDataProvider<ISpriteOutlineDataProvider>();
+            _textureDataProvider = spriteEditorDataProvider.GetDataProvider<ITextureDataProvider>();
+        }
+
         public void GenerateOutline()
         {
-            Texture2D texture = _sprite.texture;
-            Rect rect = _sprite.rect;
-            //pivotの位置を取得
-            //pivotの位置を確認しつつ、Outlineを生成する
-            //Outlineは
-            //textureを取得することで、何とか出来ないかなぁ……
-            //pivotよりも上の領域内で
+            var spriteRects = _spriteEditorDataProvider.GetSpriteRects();
+            foreach (var spriteRect in spriteRects)
+            {
+                var outlines = ShapeEditorExtension.GenerateSplitRectOutline(spriteRect,0,1,_textureDataProvider);
+                _spriteOutlineDataProvider.SetOutlines(spriteRect.spriteID, outlines);
+            }
+            _spriteEditorDataProvider.Apply();
         }
         
     }

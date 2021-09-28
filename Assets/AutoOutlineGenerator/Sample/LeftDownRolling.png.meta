@@ -14,6 +14,39 @@ TextureImporter:
   - first:
       213: -5194696969524852320
     second: LeftDownRolling_3
+  - first:
+      213: 2877471580529523173
+    second: 
+  - first:
+      213: -8655818156195654838
+    second: 10
+  - first:
+      213: 6346318911325233748
+    second: 11
+  - first:
+      213: 1840059084634729652
+    second: 12
+  - first:
+      213: 1127223760459724062
+    second: 13
+  - first:
+      213: 2450565909728410856
+    second: 14
+  - first:
+      213: -3165705482850905674
+    second: 15
+  - first:
+      213: -5774996654182199871
+    second: 16
+  - first:
+      213: 4443897450750874535
+    second: 17
+  - first:
+      213: 5661049957185019681
+    second: 18
+  - first:
+      213: 8474981341611232960
+    second: 19
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -103,7 +136,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: LeftDownRolling_0
+      name: 0
       rect:
         serializedVersion: 2
         x: 38
@@ -111,30 +144,37 @@ TextureImporter:
         width: 38
         height: 38
       alignment: 9
-      pivot: {x: 0.23684211, y: -0.02631579}
+      pivot: {x: 0.05263158, y: 0.2631579}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 13, y: -2}
-        - {x: 9, y: 11}
-        - {x: 4, y: 19}
-        - {x: -16, y: 19}
-        - {x: -19, y: 16}
-        - {x: -19, y: -9}
-        - {x: -17, y: -19}
-        - {x: 19, y: -19}
-        - {x: 19, y: -9}
+      - - {x: -14, y: -9}
+        - {x: -14, y: -14}
+        - {x: -13, y: -18}
+        - {x: -5, y: -19}
+        - {x: 18, y: -19}
+        - {x: 19, y: -18}
+        - {x: 19, y: -10}
+        - {x: 18, y: -9}
+      - - {x: 3, y: 19}
+        - {x: -14, y: 19}
+        - {x: -19, y: 15}
+        - {x: -19, y: -3}
+        - {x: -12, y: -9}
+        - {x: 17, y: -9}
         - {x: 17, y: -6}
+        - {x: 13, y: -2}
+        - {x: 10, y: 11}
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aaa268de528d6d670800000000000000
+      spriteID: 50cc61773e5ed444290b4efa42998872
       internalID: 8563269398901959338
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LeftDownRolling_1
+      name: 1
       rect:
         serializedVersion: 2
         x: 140
@@ -142,79 +182,58 @@ TextureImporter:
         width: 41
         height: 26
       alignment: 9
-      pivot: {x: 0.5121951, y: 0.34615386}
+      pivot: {x: 0, y: 0.61538464}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
+      - - {x: -20.5, y: 3}
+        - {x: -20.5, y: -9}
+        - {x: -18.5, y: -13}
+        - {x: 9.5, y: -13}
+        - {x: 17.5, y: -11}
+        - {x: 20.5, y: -5}
+        - {x: 20.5, y: 3}
       - - {x: -20.5, y: 13}
-        - {x: -20.5, y: -11}
-        - {x: -19.5, y: -13}
-        - {x: 18.5, y: -13}
-        - {x: 20.5, y: -9}
-        - {x: 20.5, y: 9}
-        - {x: 7.5, y: 13}
+        - {x: -20.5, y: 3}
+        - {x: 20.5, y: 3}
+        - {x: 20.5, y: 8}
+        - {x: 10.5, y: 13}
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 317a018217c49ebb0800000000000000
+      spriteID: 2b6dc8c23a93aa94f83ba560d50548f0
       internalID: -4906306270156249325
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LeftDownRolling_2
+      name: 2
       rect:
         serializedVersion: 2
         x: 251
         y: 13
         width: 27
         height: 49
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 9
+      pivot: {x: -0.4074074, y: 0.5510204}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -13.5, y: 24.5}
-        - {x: -13.5, y: -21.5}
-        - {x: -11.5, y: -24.5}
-        - {x: 13.5, y: -24.5}
+      - - {x: -13.5, y: 2.5}
+        - {x: -13.5, y: -17.5}
+        - {x: -10.5, y: -24.5}
+        - {x: 11.5, y: -24.5}
+        - {x: 13.5, y: -23.5}
+        - {x: 13.5, y: 2.5}
+      - - {x: 13.5, y: 2.5}
         - {x: 13.5, y: 12.5}
         - {x: 11.5, y: 24.5}
+        - {x: -13.5, y: 24.5}
+        - {x: -13.5, y: 2.5}
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da1145f72b20aab00800000000000000
+      spriteID: aaf541e162960234296d4ede4c089f83
       internalID: 840487246121669037
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: LeftDownRolling_3
-      rect:
-        serializedVersion: 2
-        x: 103
-        y: 67
-        width: 9
-        height: 14
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 60, y: -2}
-        - {x: 9, y: 11}
-        - {x: 4, y: 19}
-        - {x: -16, y: 19}
-        - {x: -19, y: 16}
-        - {x: -19, y: -9}
-        - {x: -17, y: -19}
-        - {x: 19, y: -19}
-        - {x: 19, y: -9}
-        - {x: 17, y: -6}
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0a94caff0aab8e7b0800000000000000
-      internalID: -5194696969524852320
       vertices: []
       indices: 
       edges: []

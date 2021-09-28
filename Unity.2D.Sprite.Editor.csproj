@@ -71,6 +71,7 @@
      <Compile Include="Library\PackageCache\com.unity.2d.sprite@1.0.0\Editor\ShapeEditor\ShapeEditor.cs" />
      <Compile Include="Library\PackageCache\com.unity.2d.sprite@1.0.0\Editor\SpriteEditor\SpriteEditorMenu.cs" />
      <Compile Include="Library\PackageCache\com.unity.2d.sprite@1.0.0\Editor\Interface\IGUIUtility.cs" />
+     <Compile Include="Assets\AutoOutlineGenerator\SpriteExtension\SpriteLayout.cs" />
      <Compile Include="Library\PackageCache\com.unity.2d.sprite@1.0.0\Editor\SpriteEditorModule\ISpriteEditorModule.cs" />
      <Compile Include="Library\PackageCache\com.unity.2d.sprite@1.0.0\Editor\Interface\ISpriteEditorDataProvider.cs" />
      <Compile Include="Library\PackageCache\com.unity.2d.sprite@1.0.0\Editor\SpriteEditorModule\SpriteFrameModule\SpriteFrameModuleBaseView.cs" />
@@ -87,8 +88,6 @@
      <Compile Include="Library\PackageCache\com.unity.2d.sprite@1.0.0\Editor\SpriteEditorModule\TextureImporterDataProvider.cs" />
      <Compile Include="Library\PackageCache\com.unity.2d.sprite@1.0.0\Editor\SpriteEditor\SpriteRect.cs" />
      <Compile Include="Library\PackageCache\com.unity.2d.sprite@1.0.0\Editor\Interface\IGL.cs" />
-     <Compile Include="Assets\AutoOutlineGenerator\SpriteExtension\SpriteLayout.cs" />
-     <Compile Include="Assets\AutoOutlineGenerator\SpriteExtension\AutoSpriteDivider.cs" />
      <None Include="Assets\AutoOutlineGenerator\SpriteExtension\2DSpriteExtension.asmref" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.18f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

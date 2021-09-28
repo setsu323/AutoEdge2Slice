@@ -1,38 +1,64 @@
+using AutoOutlineGenerator.SpriteExtension;
 using UnityEditor;
 using UnityEditor.U2D.Sprites;
+using UnityEditor.UIElements;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace AutoOutlineGenerator.Editor
 {
-    public class OriginalSpriteWindow
+    public class OriginalSpriteWindow : EditorWindow
     {
-        private ISpriteOutlineDataProvider _spriteOutlineDataProvider;
-        private ISpriteEditorDataProvider _spriteEditorDataProvider;
-        
-        private SpriteDataProviderFactories _spriteDataProviderFactories;
+        private SpriteDataProviderFactories SpriteDataProviderFactories
+        {
+            get
+            {
+                if (_spriteDataProviderFactories == null)
+                {
+                    _spriteDataProviderFactories = new SpriteDataProviderFactories();
+                    _spriteDataProviderFactories.Init();
+                }
+                return _spriteDataProviderFactories;
+            }
+        }
 
-        //private SpriteDataProviderBase _spriteDataProviderBase;
-        //private SpriteOutlineDataTransfer _spriteOutlineDataTransfer;
+        private SpriteDataProviderFactories _spriteDataProviderFactories;
         
+        [MenuItem("Tools/TextureDivider")]
+        public static void ShowWindow()
+        {
+            GetWindow<OriginalSpriteWindow>();
+        }
+
+        private ISpriteEditorDataProvider CreateEditorDataProvider(Texture2D texture)
+        {
+            var spriteEditorDataProvider = SpriteDataProviderFactories.GetSpriteEditorDataProviderFromObject(texture);
+            spriteEditorDataProvider.InitSpriteEditorDataProvider();
+            return spriteEditorDataProvider;
+        }
         void OnEnable()
         {
-            _spriteDataProviderFactories.Init();
-            _spriteDataProviderFactories.GetSpriteEditorDataProviderFromObject(null);
-            //ISpriteEditorDataProviderがあれば、ISpriteOutlineDataProvider系は実装可能……
-            //問題は……
-            //問題はSpriteDataProviderFactoryの依存性の注入はどうするか……
-            ISpriteDataProviderFactory<Texture2D> spriteDataProviderFactory;
+            var autoSpriteDivider = new AutoSpriteDivider();
+            var outlineOptimizer = new OutlineGenerator();
             
+            var field = new ObjectField() {allowSceneObjects = false};
+            field.objectType = typeof(Texture2D);
+            field.RegisterValueChangedCallback(x =>
+            {
+                var spriteEditorDataProvider = CreateEditorDataProvider(x.newValue as Texture2D);
+                autoSpriteDivider.SetSpriteEditorDataProvider(spriteEditorDataProvider);
+                outlineOptimizer.Set(spriteEditorDataProvider);
+            });
+            var applyButton = new Button(() =>
+                {
+                    autoSpriteDivider.DivideSprite(new Vector2Int(100, 100), 3, new Vector2(0.4f, 0.4f));
+                    outlineOptimizer.GenerateOutline();
+                }
+            );
             
-            _spriteEditorDataProvider = spriteDataProviderFactory.CreateDataProvider(null);
-            _spriteOutlineDataProvider = _spriteEditorDataProvider.GetDataProvider<ISpriteOutlineDataProvider>();
-            //おそらくはこれでいける……
-            var spriteRects = _spriteEditorDataProvider.GetSpriteRects();
-            _spriteOutlineDataProvider.GetOutlines(spriteRects[0].spriteID);
-            
-            //問題はインターフェースにどうやって依存性を注入するか……
-
-
+            var root = rootVisualElement;
+            root.Add(field);
+            root.Add(applyButton);
         }
     }
 }
