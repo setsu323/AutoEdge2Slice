@@ -55,7 +55,7 @@
      <Compile Include="Assets\AutoOutlineGenerator\Editor\OutlineGenerator.cs" />
      <Compile Include="Assets\AutoOutlineGenerator\Editor\AutoSpriteDivider.cs" />
      <Compile Include="Assets\AutoOutlineGenerator\Editor\PageProperty.cs" />
-     <Compile Include="Assets\AutoOutlineGenerator\Editor\OriginalSpriteWindow.cs" />
+     <Compile Include="Assets\AutoOutlineGenerator\Editor\TextureDividerWindow.cs" />
      <Compile Include="Assets\AutoOutlineGenerator\Editor\PageDataProvider.cs" />
      <None Include="Assets\AutoOutlineGenerator\Editor\AutoOutlineGenerator.Editor.asmdef" />
  <Reference Include="UnityEngine">

@@ -26,7 +26,7 @@ namespace AutoOutlineGenerator.Editor
                 spriteRects = new SpriteRect[splitCount];
                 cached.CopyTo(spriteRects, 0);
             }
-
+            
             Split(splitSize, spriteRects, pivot, splitCount, textureDataProvider);
             
             _spriteEditorDataProvider.SetSpriteRects(spriteRects);

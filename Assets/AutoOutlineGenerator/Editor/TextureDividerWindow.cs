@@ -8,7 +8,7 @@ using UnityEngine.UIElements;
 
 namespace AutoOutlineGenerator.Editor
 {
-    public class OriginalSpriteWindow : EditorWindow
+    public class TextureDividerWindow : EditorWindow
     {
         private SpriteDataProviderFactories SpriteDataProviderFactories
         {
@@ -28,7 +28,7 @@ namespace AutoOutlineGenerator.Editor
         [MenuItem("Tools/TextureDivider")]
         public static void ShowWindow()
         {
-            GetWindow<OriginalSpriteWindow>();
+            GetWindow<TextureDividerWindow>();
         }
 
         private ISpriteEditorDataProvider CreateEditorDataProvider(Texture2D texture)
