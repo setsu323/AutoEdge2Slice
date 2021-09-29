@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using System.Linq;
 using System.Xml.Linq;
 using UnityEditor;
 using UnityEditor.AssetImporters;
@@ -13,9 +14,6 @@ namespace AutoOutlineGenerator.Editor
     {
         public override void OnImportAsset(AssetImportContext ctx)
         {
-            var document = XDocument.Parse(File.ReadAllText(ctx.assetPath));
-            //documentから情報を取得する。
-            
             var targetTexture = AssetDatabase.LoadAssetAtPath<Texture2D>(GetTextureTargetPath(ctx.assetPath));
             
             //textureから実装する
@@ -24,22 +22,15 @@ namespace AutoOutlineGenerator.Editor
             var autoSpriteDivider = new AutoSpriteDivider(spriteEditorDataProvider);
             var outlineOptimizer = new OutlineGenerator(spriteEditorDataProvider);
 
-            var width = int.Parse(document.Element("width").Value);
-            var height = int.Parse(document.Element("height").Value);
-            var splitCount = int.Parse(document.Element("splitCount").Value);
-            var offsetX = int.Parse(document.Element("offsetX").Value);
-            var offsetY = int.Parse(document.Element("offsetY").Value);
-            var pivot = new Vector2(offsetX / (float) width, offsetY / (float) height);
-
-            width = 100;
-            height = 100;
-            splitCount = 3;
-            offsetX = 35;
-            offsetY = 18;
-            pivot = new Vector2(offsetX / (float) width, offsetY / (float) height);
+            var pageDataDivider = new PageDataDivider(spriteEditorDataProvider.GetDataProvider<ITextureDataProvider>(),
+                File.ReadAllText(ctx.assetPath));
             
-            //autoSpriteDivider.DivideSprite(new Vector2Int(width, height), splitCount, pivot);
+            pageDataDivider.SetPageData(out var rectInt,out var pivot);
+            autoSpriteDivider.DivideSprite(rectInt,pivot);
             outlineOptimizer.GenerateOutline();
+            
+            spriteEditorDataProvider.Apply();
+            AssetDatabase.ImportAsset(GetTextureTargetPath(ctx.assetPath));
         }
 
         private static ISpriteEditorDataProvider GetSpriteEditorDataProvider(Texture2D texture2D)

@@ -53,7 +53,6 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\AutoOutlineGenerator\Editor\OutlineGenerator.cs" />
-     <Compile Include="Assets\AutoOutlineGenerator\Editor\TextureDividerWindow.cs" />
      <Compile Include="Assets\AutoOutlineGenerator\Editor\AutoSpriteDivider.cs" />
      <Compile Include="Assets\AutoOutlineGenerator\Editor\PageProperty.cs" />
      <Compile Include="Assets\AutoOutlineGenerator\Editor\PageDataProvider.cs" />
