@@ -7,56 +7,44 @@ namespace AutoOutlineGenerator.Editor
 {
     public class AutoSpriteDivider
     {
-        private ISpriteEditorDataProvider _spriteEditorDataProvider;
+        private readonly ISpriteEditorDataProvider _spriteEditorDataProvider;
+        private readonly ITextureDataProvider _textureDataProvider;
 
-        public void DivideSprite(Vector2Int splitSize, int splitCount,Vector2 pivot)
+        public void DivideSprite(Rect[] rects,Vector2[] pivots)
         {
             var cached = _spriteEditorDataProvider.GetSpriteRects();
-            var textureDataProvider =
-                _spriteEditorDataProvider.GetDataProvider<ITextureDataProvider>();
-            
-            textureDataProvider.GetTextureActualWidthAndHeight(out var width, out var height);
+
             SpriteRect[] spriteRects;
-            if (cached.Length > splitCount)
+            if (cached.Length > rects.Length)
             {
                 spriteRects = cached;
             }
             else
             {
-                spriteRects = new SpriteRect[splitCount];
+                spriteRects = new SpriteRect[rects.Length];
                 cached.CopyTo(spriteRects, 0);
             }
             
-            Split(splitSize, spriteRects, pivot, splitCount, textureDataProvider);
-            
+            Split(spriteRects,rects,pivots);
+
             _spriteEditorDataProvider.SetSpriteRects(spriteRects);
             _spriteEditorDataProvider.Apply();
         }
         
-        private static void Split(Vector2Int splitSize,SpriteRect[] spriteRects,Vector2 pivot,int splitCount,ITextureDataProvider textureDataProvider)
+        private void Split(SpriteRect[] spriteRects, Rect[] rects, Vector2[] pivots)
         {
-            textureDataProvider.GetTextureActualWidthAndHeight(out var width, out var height);
-            var spriteNumber = 0;
-            for (var y = height - splitSize.y; y >= 0; y -= splitSize.y)
+            for (var i = 0; i < rects.Length; i++)
             {
-                for (var x = 0; x + splitSize.x <= width; x += splitSize.x)
-                {
-                    var spriteRect = spriteRects[spriteNumber] ?? new SpriteRect();
-                    spriteRect.rect = ShrinkSpriteRect(textureDataProvider,new Rect(new Vector2(x, y), splitSize));
-
-                    spriteRect.pivot = ConvertPivot(new Rect(new Vector2(x, y), splitSize), pivot, spriteRect.rect);
-                    
-                    spriteRect.alignment = SpriteAlignment.Custom;
-                    spriteRect.spriteID = new GUID(System.Guid.NewGuid().ToString());
-                    spriteRect.name = spriteNumber.ToString();
-                    spriteRects[spriteNumber] = spriteRect;
-
-                    spriteNumber++;
-                    if (spriteNumber >= splitCount) return;
-                }
+                var spriteRect = spriteRects[i] ?? new SpriteRect();
+                var targetRect =
+                    spriteRect.rect = ShrinkSpriteRect(rects[i]);
+                spriteRect.pivot = ConvertPivot(rects[i], pivots[i], spriteRect.rect);
+            
+                spriteRect.alignment = SpriteAlignment.Custom;
+                spriteRect.spriteID = new GUID(System.Guid.NewGuid().ToString());
+                spriteRect.name = i.ToString();
+                spriteRects[i] = spriteRect;
             }
-
-            throw new ArgumentException();
         }
 
         private static Vector2 ConvertPivot(Rect originalRect, Vector2 pivot,Rect targetRect)
@@ -68,9 +56,9 @@ namespace AutoOutlineGenerator.Editor
             return new Vector2(x, y);
         }
 
-        private static Rect ShrinkSpriteRect(ITextureDataProvider textureDataProvider,Rect rect)
+        private Rect ShrinkSpriteRect(Rect rect)
         {
-            var pixels = textureDataProvider.GetReadableTexture2D().GetPixels((int) rect.x, (int) rect.y, (int) rect.width, (int) rect.height);
+            var pixels = _textureDataProvider.GetReadableTexture2D().GetPixels((int) rect.x, (int) rect.y, (int) rect.width, (int) rect.height);
             
             var xMin = (int)rect.width;
             var yMin = (int)rect.height;
@@ -107,16 +95,11 @@ namespace AutoOutlineGenerator.Editor
             return Rect.MinMaxRect(rect.xMin + xMin, rect.yMin + yMin, rect.xMin + xMax + 1, rect.yMin + yMax + 1);
 
         }
-
-        public AutoSpriteDivider(){}
-
+        
         public AutoSpriteDivider(ISpriteEditorDataProvider spriteEditorDataProvider)
         {
             _spriteEditorDataProvider = spriteEditorDataProvider;
-        }
-        public void SetSpriteEditorDataProvider(ISpriteEditorDataProvider spriteEditorDataProvider)
-        {
-            _spriteEditorDataProvider = spriteEditorDataProvider;
+            _textureDataProvider = _spriteEditorDataProvider.GetDataProvider<ITextureDataProvider>();
         }
     }
 }

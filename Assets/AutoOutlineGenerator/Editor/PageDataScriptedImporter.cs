@@ -38,7 +38,7 @@ namespace AutoOutlineGenerator.Editor
             offsetY = 18;
             pivot = new Vector2(offsetX / (float) width, offsetY / (float) height);
             
-            autoSpriteDivider.DivideSprite(new Vector2Int(width, height), splitCount, pivot);
+            //autoSpriteDivider.DivideSprite(new Vector2Int(width, height), splitCount, pivot);
             outlineOptimizer.GenerateOutline();
         }
 
