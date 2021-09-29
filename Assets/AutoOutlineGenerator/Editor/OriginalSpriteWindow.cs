@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using AutoOutlineGenerator.SpriteExtension;
 using UnityEditor;
 using UnityEditor.U2D.Sprites;
@@ -51,7 +52,14 @@ namespace AutoOutlineGenerator.Editor
             });
             var applyButton = new Button(() =>
                 {
-                    autoSpriteDivider.DivideSprite(new Vector2Int(100, 100), 3, new Vector2(0.4f, 0.4f));
+                    var pageProperties = new List<PageProperty>()
+                    {
+                        new PageProperty(new Vector2Int(100, 100), new Vector2Int(35, 27), true),
+                        new PageProperty(new Vector2Int(200, 150), new Vector2Int(25, 32), true)
+                    };
+                    var pageDataProvider = new PageDataProvider(pageProperties);
+                    autoSpriteDivider.DivideSprite(pageDataProvider.CalculateImplicationArea().size,
+                        pageDataProvider.GetSplitCount, pageDataProvider.Pivot);
                     outlineOptimizer.GenerateOutline();
                 }
             );
