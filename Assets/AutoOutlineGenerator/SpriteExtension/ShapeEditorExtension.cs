@@ -10,7 +10,15 @@ namespace AutoOutlineGenerator.SpriteExtension
 {
     public class ShapeEditorExtension
     {
-        //Testを行いたいなぁ……
+        /// <summary>
+        /// pivotにあわせてSpriteのアウトラインを上下に分割する。
+        /// GenerateOutlineがUnityEditor.SpritesのInternalな関数なので、Assemblyを拡張する形で実装している
+        /// </summary>
+        /// <param name="spriteRect"></param>
+        /// <param name="detail"></param>
+        /// <param name="alphaTolerance"></param>
+        /// <param name="textureDataProvider"></param>
+        /// <returns></returns>
         public static List<Vector2[]> GenerateSplitRectOutline(SpriteRect spriteRect, float detail,
             byte alphaTolerance, ITextureDataProvider textureDataProvider)
         {
@@ -48,26 +56,17 @@ namespace AutoOutlineGenerator.SpriteExtension
 
             return outline;
         }
-        internal static void SplitRectVertically(Rect rect, float length,out Rect upperRect,out Rect lowerRect)
+        private static void SplitRectVertically(Rect rect, float length,out Rect upperRect,out Rect lowerRect)
         {
             var splitPoint = Mathf.Lerp(rect.yMin, rect.yMax, length);
             upperRect = Rect.MinMaxRect(rect.xMin, rect.yMin, rect.xMax, splitPoint);
             lowerRect = Rect.MinMaxRect(rect.xMin, splitPoint, rect.xMax, rect.yMax);
         }
-        internal static Rect ConvertToCappedSpriteRect(Rect actualSpriteRect, Vector2 toCapConversionRate)
-        {
-            var rect = actualSpriteRect;
-            rect.xMin *= toCapConversionRate.x;
-            rect.xMax *= toCapConversionRate.x;
-            rect.yMin *= toCapConversionRate.y;
-            rect.yMax *= toCapConversionRate.y;
-            return rect;
-        }
-        internal static Vector2 ConvertToActualSpriteRect(Vector2 cappedVector, Vector2 toCapConversionRate)
+        private static Vector2 ConvertToActualSpriteRect(Vector2 cappedVector, Vector2 toCapConversionRate)
         {
             return new Vector2(cappedVector.x / toCapConversionRate.x, cappedVector.y / toCapConversionRate.y);
         }
-        internal static Vector2 GetCapConversionRate(Texture2D texture,ITextureDataProvider textureDataProvider)
+        private static Vector2 GetCapConversionRate(Texture2D texture,ITextureDataProvider textureDataProvider)
         {
             textureDataProvider.GetTextureActualWidthAndHeight(out var actualWidth,out var actualHeight);
             var cappedWidth = texture.width;
@@ -82,8 +81,5 @@ namespace AutoOutlineGenerator.SpriteExtension
             so.y = Mathf.Max(r.yMin, so.y);
             return so;
         }
-
-        private Texture2D _readableTexture;
-        private Texture2D _texture;
     }
 }

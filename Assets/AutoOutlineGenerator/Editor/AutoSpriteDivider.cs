@@ -3,7 +3,7 @@ using UnityEditor;
 using UnityEditor.U2D.Sprites;
 using UnityEngine;
 
-namespace AutoOutlineGenerator.SpriteExtension
+namespace AutoOutlineGenerator.Editor
 {
     public class AutoSpriteDivider
     {
