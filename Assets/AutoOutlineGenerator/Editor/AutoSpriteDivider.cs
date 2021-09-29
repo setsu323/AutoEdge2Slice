@@ -32,7 +32,7 @@ namespace AutoOutlineGenerator.Editor
             _spriteEditorDataProvider.SetSpriteRects(spriteRects);
             _spriteEditorDataProvider.Apply();
         }
-
+        
         private static void Split(Vector2Int splitSize,SpriteRect[] spriteRects,Vector2 pivot,int splitCount,ITextureDataProvider textureDataProvider)
         {
             textureDataProvider.GetTextureActualWidthAndHeight(out var width, out var height);
@@ -108,6 +108,12 @@ namespace AutoOutlineGenerator.Editor
 
         }
 
+        public AutoSpriteDivider(){}
+
+        public AutoSpriteDivider(ISpriteEditorDataProvider spriteEditorDataProvider)
+        {
+            _spriteEditorDataProvider = spriteEditorDataProvider;
+        }
         public void SetSpriteEditorDataProvider(ISpriteEditorDataProvider spriteEditorDataProvider)
         {
             _spriteEditorDataProvider = spriteEditorDataProvider;

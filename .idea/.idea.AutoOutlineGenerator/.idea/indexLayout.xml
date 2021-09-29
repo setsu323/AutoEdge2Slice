@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="UserContentModel">
-    <attachedFolders>
-      <Path>../../../../Program Files/Unity/Hub/Editor/2020.3.18f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.2d.sprite/Editor</Path>
-    </attachedFolders>
-    <explicitIncludes />
-    <explicitExcludes />
+    <attachedFolders />
+    <explicitIncludes>
+      <Path>Assets/AutoOutlineGenerator/2DAnimationExtension/2DAnimationExtension.asmref</Path>
+    </explicitIncludes>
+    <explicitExcludes>
+      <Path>Library/PackageCache/com.unity.2d.animation@5.0.7</Path>
+    </explicitExcludes>
   </component>
 </project>

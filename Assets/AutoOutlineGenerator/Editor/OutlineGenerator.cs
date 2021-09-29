@@ -14,6 +14,11 @@ namespace AutoOutlineGenerator.Editor
         private ISpriteOutlineDataProvider _spriteOutlineDataProvider;
         private ITextureDataProvider _textureDataProvider;
 
+        public OutlineGenerator(){}
+        public OutlineGenerator(ISpriteEditorDataProvider spriteEditorDataProvider)
+        {
+            Set(spriteEditorDataProvider);
+        }
         public void Set(ISpriteEditorDataProvider spriteEditorDataProvider)
         {
             _spriteEditorDataProvider = spriteEditorDataProvider;
