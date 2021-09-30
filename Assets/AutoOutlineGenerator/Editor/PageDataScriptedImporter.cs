@@ -25,8 +25,8 @@ namespace AutoOutlineGenerator.Editor
             var spriteEditorDataProvider = GetSpriteEditorDataProvider(targetTexture);
 
             var spriteSettingWriter = new SpriteSettingWriter(spriteEditorDataProvider);
-            var autoSpriteDivider = new AutoSpriteDivider(spriteEditorDataProvider);
-            var outlineOptimizer = new OutlineGenerator(spriteEditorDataProvider);
+            var autoSpriteDivider = new SpriteDivider(spriteEditorDataProvider);
+            var outlineOptimizer = new VerticalSplitOutlineGenerator(spriteEditorDataProvider);
 
             var pageDataDivider = new PageDataDivider(spriteEditorDataProvider.GetDataProvider<ITextureDataProvider>(),
                 File.ReadAllText(path));

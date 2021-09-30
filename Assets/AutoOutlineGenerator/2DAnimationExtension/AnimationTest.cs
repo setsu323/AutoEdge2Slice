@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using Codice.Client.Common;
@@ -15,15 +16,15 @@ namespace DefaultNamespace
     {
         [SerializeField]
         private SpriteRenderer _spriteRenderer;
+
+        private static readonly HashSet<Sprite> ModifiedSprites = new HashSet<Sprite>();
         private void Update()
         {
             var sprite = _spriteRenderer.sprite;
-            
-            
-            //HashTableの方が綺麗かも……
-            if (sprite.name.StartsWith("modified")) return;
-            sprite.name = "modified" + sprite.name;
-            
+
+            if (ModifiedSprites.Contains(sprite)) return;
+            ModifiedSprites.Add(sprite);
+
             var texCoord = sprite.GetVertexAttribute<Vector2>(VertexAttribute.TexCoord0);
             var texCoordArray = new NativeArray<Vector2>(texCoord.ToArray(), Allocator.Temp);
             sprite.SetVertexAttribute<Vector2>(VertexAttribute.TexCoord0, texCoordArray);
@@ -37,8 +38,6 @@ namespace DefaultNamespace
             
             var set = ConvertVertex(s);
             sprite.SetVertexAttribute<Vector3>(UnityEngine.Rendering.VertexAttribute.Position,set);
-            //単純に折り曲げても、FragmentShaderがVertexを使うので、
-            //sprite.SetVertexAttribute();
 
             Debug.Log(builder);
         }

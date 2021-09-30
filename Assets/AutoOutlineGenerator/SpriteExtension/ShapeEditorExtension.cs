@@ -38,6 +38,19 @@ namespace AutoOutlineGenerator.SpriteExtension
             return upperOutline.Concat(lowerOutline).ToList();
         }
 
+        public static List<Vector2[]> GenerateOutline(SpriteRect spriteRect, float detail, byte alphaTolerance,
+            ITextureDataProvider textureDataProvider)
+        {
+            var outline = new List<Vector2[]>();
+            var texture = textureDataProvider.GetReadableTexture2D();
+            if (texture == null) return outline;
+
+            var toCapConversionRate = GetCapConversionRate(texture, textureDataProvider);
+            SpriteUtility.GenerateOutline(texture,spriteRect.rect,detail,alphaTolerance,true,out var paths);
+
+            return paths.ToList();
+        }
+
         private static IEnumerable<Vector2[]> GenerateOutline(Texture2D readableTexture,Rect actualSpriteRect,Rect actualWholeSpriteRect,float detail,byte alphaTolerance,Vector2 toCapConversionRate)
         {
             SpriteUtility.GenerateOutline(readableTexture, actualSpriteRect, detail, alphaTolerance, true, out var paths);

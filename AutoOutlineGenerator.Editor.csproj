@@ -52,10 +52,10 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\AutoOutlineGenerator\Editor\OutlineGenerator.cs" />
+     <Compile Include="Assets\AutoOutlineGenerator\Editor\OutlineModules.cs" />
      <Compile Include="Assets\AutoOutlineGenerator\Editor\SpriteSettingWriter.cs" />
      <Compile Include="Assets\AutoOutlineGenerator\Editor\PageDataDivider.cs" />
-     <Compile Include="Assets\AutoOutlineGenerator\Editor\AutoSpriteDivider.cs" />
+     <Compile Include="Assets\AutoOutlineGenerator\Editor\SpriteDivider.cs" />
      <Compile Include="Assets\AutoOutlineGenerator\Editor\PageDataScriptedImporter.cs" />
      <Compile Include="Assets\AutoOutlineGenerator\Editor\EdgePageDataPostProcessor.cs" />
      <None Include="Assets\AutoOutlineGenerator\Editor\AutoOutlineGenerator.Editor.asmdef" />
