@@ -55,9 +55,10 @@ namespace AutoOutlineGenerator.Editor
             var y = (pos.y - targetRect.yMin) / targetRect.height;
             return new Vector2(x, y);
         }
-
+        
         private Rect ShrinkSpriteRect(Rect rect)
         {
+            //TODO UnityのPOTやmaxSizeに対応する
             var pixels = _textureDataProvider.GetReadableTexture2D().GetPixels((int) rect.x, (int) rect.y, (int) rect.width, (int) rect.height);
             
             var xMin = (int)rect.width;
@@ -91,7 +92,6 @@ namespace AutoOutlineGenerator.Editor
                     }
                 }
             }
-
             return Rect.MinMaxRect(rect.xMin + xMin, rect.yMin + yMin, rect.xMin + xMax + 1, rect.yMin + yMax + 1);
 
         }

@@ -9,28 +9,35 @@ using UnityEngine;
 
 namespace AutoOutlineGenerator.Editor
 {
-    [ScriptedImporter(1,"edgpd")]
+    [ScriptedImporter(1,new []{"edgpd"})]
     public class PageDataScriptedImporter : ScriptedImporter
     {
         public override void OnImportAsset(AssetImportContext ctx)
         {
-            var targetTexture = AssetDatabase.LoadAssetAtPath<Texture2D>(GetTextureTargetPath(ctx.assetPath));
+            ImportSpriteAsset(ctx.assetPath);
+        }
+
+        public static void ImportSpriteAsset(string path)
+        {
+            var targetTexture = AssetDatabase.LoadAssetAtPath<Texture2D>(GetTextureTargetPath(path));
             
             //textureから実装する
             var spriteEditorDataProvider = GetSpriteEditorDataProvider(targetTexture);
-            
+
+            var spriteSettingWriter = new SpriteSettingWriter(spriteEditorDataProvider);
             var autoSpriteDivider = new AutoSpriteDivider(spriteEditorDataProvider);
             var outlineOptimizer = new OutlineGenerator(spriteEditorDataProvider);
 
             var pageDataDivider = new PageDataDivider(spriteEditorDataProvider.GetDataProvider<ITextureDataProvider>(),
-                File.ReadAllText(ctx.assetPath));
+                File.ReadAllText(path));
             
             pageDataDivider.SetPageData(out var rectInt,out var pivot);
+            spriteSettingWriter.WriteSpriteSetting();
             autoSpriteDivider.DivideSprite(rectInt,pivot);
             outlineOptimizer.GenerateOutline();
             
             spriteEditorDataProvider.Apply();
-            AssetDatabase.ImportAsset(GetTextureTargetPath(ctx.assetPath));
+            AssetDatabase.ImportAsset(GetTextureTargetPath(path));
         }
 
         private static ISpriteEditorDataProvider GetSpriteEditorDataProvider(Texture2D texture2D)
@@ -42,7 +49,7 @@ namespace AutoOutlineGenerator.Editor
             return spriteEditorDataProvider;
         }
 
-        private string GetTextureTargetPath(string path)
+        private static string GetTextureTargetPath(string path)
         {
             return Path.ChangeExtension(path, "png");
         }
