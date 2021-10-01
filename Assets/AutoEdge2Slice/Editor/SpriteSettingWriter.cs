@@ -8,17 +8,10 @@ namespace AutoOutlineGenerator.Editor
     {
         //TODO Spriteの設定を行えるようにする
         private readonly TextureImporter _textureImporter;
-        private readonly ISpriteEditorDataProvider _spriteEditorDataProvider;
 
-        public SpriteSettingWriter(TextureImporter textureImporter, ISpriteEditorDataProvider spriteEditorDataProvider)
+        public SpriteSettingWriter(TextureImporter textureImporter)
         {
             _textureImporter = textureImporter;
-            _spriteEditorDataProvider = spriteEditorDataProvider;
-        }
-        public SpriteSettingWriter(ISpriteEditorDataProvider spriteEditorDataProvider)
-        {
-            _spriteEditorDataProvider = spriteEditorDataProvider;
-            _textureImporter = spriteEditorDataProvider.targetObject as TextureImporter;
         }
 
         public void WriteSpriteSetting()
@@ -29,7 +22,6 @@ namespace AutoOutlineGenerator.Editor
             _textureImporter.textureCompression = TextureImporterCompression.Uncompressed;
             _textureImporter.filterMode = FilterMode.Point;
             _textureImporter.spritePixelsPerUnit = 64;
-            _spriteEditorDataProvider.Apply();
         }
     }
 }

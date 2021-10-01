@@ -42,7 +42,8 @@ namespace AutoOutlineGenerator.Editor
             
                 spriteRect.alignment = SpriteAlignment.Custom;
                 spriteRect.spriteID = new GUID(System.Guid.NewGuid().ToString());
-                spriteRect.name = i.ToString();
+                
+                //spriteRect.name = i.ToString();
                 spriteRects[i] = spriteRect;
             }
         }

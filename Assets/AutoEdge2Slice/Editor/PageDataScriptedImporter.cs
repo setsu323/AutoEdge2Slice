@@ -23,8 +23,7 @@ namespace AutoOutlineGenerator.Editor
             
             //textureから実装する
             var spriteEditorDataProvider = GetSpriteEditorDataProvider(targetTexture);
-
-            var spriteSettingWriter = new SpriteSettingWriter(spriteEditorDataProvider);
+            
             var autoSpriteDivider = new SpriteDivider(spriteEditorDataProvider);
             var outlineOptimizer = new VerticalSplitOutlineGenerator(spriteEditorDataProvider);
 
@@ -32,7 +31,6 @@ namespace AutoOutlineGenerator.Editor
                 File.ReadAllText(path));
             
             pageDataDivider.SetPageData(out var rectInt,out var pivot);
-            spriteSettingWriter.WriteSpriteSetting();
             autoSpriteDivider.DivideSprite(rectInt,pivot);
             outlineOptimizer.GenerateOutline();
             

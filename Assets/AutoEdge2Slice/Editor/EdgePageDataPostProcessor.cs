@@ -24,5 +24,17 @@ namespace AutoOutlineGenerator.Editor
                 }
             }
         }
+
+        private void OnPreprocessTexture()
+        {
+            var textureImporter = assetImporter as TextureImporter;
+            var pageDataPath = Path.ChangeExtension(textureImporter.assetPath, "xml");
+            var guid = AssetDatabase.AssetPathToGUID(pageDataPath);
+            if (guid != "")
+            {
+                var spriteSettingWriter = new SpriteSettingWriter(textureImporter);
+                spriteSettingWriter.WriteSpriteSetting();
+            }
+        }
     }
 }
