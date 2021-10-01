@@ -9,6 +9,7 @@ namespace AutoOutlineGenerator.Editor
     {
         private readonly ISpriteEditorDataProvider _spriteEditorDataProvider;
         private readonly ITextureDataProvider _textureDataProvider;
+        private readonly string _parentName;
 
         public void DivideSprite(Rect[] rects,Vector2[] pivots)
         {
@@ -42,8 +43,8 @@ namespace AutoOutlineGenerator.Editor
             
                 spriteRect.alignment = SpriteAlignment.Custom;
                 spriteRect.spriteID = new GUID(System.Guid.NewGuid().ToString());
-                
-                //spriteRect.name = i.ToString();
+
+                spriteRect.name = _parentName + "_" + i;
                 spriteRects[i] = spriteRect;
             }
         }
@@ -97,9 +98,10 @@ namespace AutoOutlineGenerator.Editor
 
         }
         
-        public SpriteDivider(ISpriteEditorDataProvider spriteEditorDataProvider)
+        public SpriteDivider(ISpriteEditorDataProvider spriteEditorDataProvider, string parentName)
         {
             _spriteEditorDataProvider = spriteEditorDataProvider;
+            _parentName = parentName;
             _textureDataProvider = _spriteEditorDataProvider.GetDataProvider<ITextureDataProvider>();
         }
     }

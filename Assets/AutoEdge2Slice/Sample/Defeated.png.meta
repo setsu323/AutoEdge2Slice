@@ -3,20 +3,20 @@ guid: f9614dd9631cc094789ebfa967b7fcb8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5027509340213622084
-    second: 0
+      213: -5090266087726099736
+    second: Defeated_0
   - first:
-      213: -2374222918679686493
-    second: 1
+      213: 5642732713178504336
+    second: Defeated_1
   - first:
-      213: -761933863725385812
-    second: 2
+      213: -9113130909647496064
+    second: Defeated_2
   - first:
-      213: -5906598218874874896
-    second: 3
+      213: 1175485771871903453
+    second: Defeated_3
   - first:
-      213: -1816755548282093316
-    second: 4
+      213: 8385917484109759469
+    second: Defeated_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -94,7 +94,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 0
+      name: Defeated_0
       rect:
         serializedVersion: 2
         x: 44
@@ -121,14 +121,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4b4200a35f0a6ab45b8cb177418d9506
-      internalID: -5027509340213622084
+      spriteID: 0a4add594b0414643ab451a9790b4d0c
+      internalID: -5090266087726099736
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 1
+      name: Defeated_1
       rect:
         serializedVersion: 2
         x: 144
@@ -155,14 +155,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a62c30015d80ce4daba9cb0d4c86e60
-      internalID: -2374222918679686493
+      spriteID: d5cc26eda422ffa4f91dd1845af71e1d
+      internalID: 5642732713178504336
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 2
+      name: Defeated_2
       rect:
         serializedVersion: 2
         x: 244
@@ -189,14 +189,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 958492344e594f746a69af62335dc2ec
-      internalID: -761933863725385812
+      spriteID: 3916414726f1ff04296ab2af81827154
+      internalID: -9113130909647496064
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3
+      name: Defeated_3
       rect:
         serializedVersion: 2
         x: 344
@@ -223,14 +223,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 56c37a5a8931dbf4f962f883a0ed56f6
-      internalID: -5906598218874874896
+      spriteID: 99576f67e0fcbbd41bc1bd52180f3a68
+      internalID: 1175485771871903453
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 4
+      name: Defeated_4
       rect:
         serializedVersion: 2
         x: 444
@@ -257,8 +257,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6da25009369bad440930808601a72d50
-      internalID: -1816755548282093316
+      spriteID: 1403fe7c25760974a8517feb71da1250
+      internalID: 8385917484109759469
       vertices: []
       indices: 
       edges: []
@@ -266,7 +266,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 6c7a2a4463a5ca5498b89fbc156f467b
+    spriteID: 90156005efbeebf48960c3eee6a1a7f0
     internalID: 0
     vertices: []
     indices: 

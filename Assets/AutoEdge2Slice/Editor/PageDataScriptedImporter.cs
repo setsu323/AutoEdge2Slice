@@ -23,8 +23,8 @@ namespace AutoOutlineGenerator.Editor
             
             //textureから実装する
             var spriteEditorDataProvider = GetSpriteEditorDataProvider(targetTexture);
-            
-            var autoSpriteDivider = new SpriteDivider(spriteEditorDataProvider);
+
+            var autoSpriteDivider = new SpriteDivider(spriteEditorDataProvider, targetTexture.name);
             var outlineOptimizer = new VerticalSplitOutlineGenerator(spriteEditorDataProvider);
 
             var pageDataDivider = new PageDataDivider(spriteEditorDataProvider.GetDataProvider<ITextureDataProvider>(),

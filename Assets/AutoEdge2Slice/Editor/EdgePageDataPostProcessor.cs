@@ -32,7 +32,8 @@ namespace AutoOutlineGenerator.Editor
             var guid = AssetDatabase.AssetPathToGUID(pageDataPath);
             if (guid != "")
             {
-                var spriteSettingWriter = new SpriteSettingWriter(textureImporter);
+                var spriteSettingWriter = new SpriteSettingsWriter(textureImporter,
+                    TextureImporterCompression.Uncompressed, FilterMode.Point, 64, int.MaxValue);
                 spriteSettingWriter.WriteSpriteSetting();
             }
         }
