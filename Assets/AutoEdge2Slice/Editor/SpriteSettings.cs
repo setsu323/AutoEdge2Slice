@@ -5,10 +5,19 @@ namespace AutoOutlineGenerator.Editor
 {
     internal class SpriteSettings : ScriptableObject
     {
-        public TextureImporterCompression _textureImporterCompression = TextureImporterCompression.Uncompressed;
-        public FilterMode _filterMode;
-        public float _pixelPerUnit;
-        public int _maxTextureSize;
+        [SerializeField]
+        private TextureImporterCompression _textureImporterCompression = TextureImporterCompression.Uncompressed;
+        [SerializeField]
+        private FilterMode _filterMode = FilterMode.Point;
+        [SerializeField]
+        private float _pixelPerUnit = 64;
+        [SerializeField]
+        private int _maxTextureSize = 16384;
+
+        public TextureImporterCompression TextureImporterCompression => _textureImporterCompression;
+        public FilterMode FilterMode => _filterMode;
+        public float PixelPerUnit => _pixelPerUnit;
+        public int MaxTextureSize => _maxTextureSize;
 
         internal static SpriteSettings GetOrCreate()
         {
