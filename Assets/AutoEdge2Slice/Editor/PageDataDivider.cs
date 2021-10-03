@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace AutoOutlineGenerator.Editor
 {
-    public class PageDataDivider
+    internal class PageDataDivider
     {
         private int _textureWidth;
         private int _textureHeight;

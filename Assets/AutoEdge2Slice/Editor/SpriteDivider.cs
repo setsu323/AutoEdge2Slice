@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace AutoOutlineGenerator.Editor
 {
-    public class SpriteDivider
+    internal class SpriteDivider
     {
         private readonly ISpriteEditorDataProvider _spriteEditorDataProvider;
         private readonly ITextureDataProvider _textureDataProvider;

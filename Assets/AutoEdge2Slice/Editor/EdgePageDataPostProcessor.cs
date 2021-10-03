@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace AutoOutlineGenerator.Editor
 {
-    public class EdgePageDataPostProcessor : AssetPostprocessor
+    internal class EdgePageDataPostProcessor : AssetPostprocessor
     {
         private static void OnPostprocessAllAssets(string[] importedAssets, string[] deletedAssets, string[] movedAssets,
             string[] movedFromAssetPaths)

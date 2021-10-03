@@ -4,14 +4,14 @@ using UnityEngine;
 
 namespace AutoOutlineGenerator.Editor
 {
-    public interface IOutlineGenerator
+    internal interface IOutlineGenerator
     {
         void GenerateOutline();
     }
     /// <summary>
     /// Spriteの情報からOutlineを生成するGenerator
     /// </summary>
-    public class VerticalSplitOutlineGenerator : IOutlineGenerator
+    internal class VerticalSplitOutlineGenerator : IOutlineGenerator
     {
         //まず、そもそもSpriteを読み込みたい……
         private readonly ISpriteEditorDataProvider _spriteEditorDataProvider;
@@ -38,7 +38,7 @@ namespace AutoOutlineGenerator.Editor
         
     }
 
-    public class OutlineGenerator : IOutlineGenerator
+    internal class OutlineGenerator : IOutlineGenerator
     {
         //まず、そもそもSpriteを読み込みたい……
         private readonly ISpriteEditorDataProvider _spriteEditorDataProvider;

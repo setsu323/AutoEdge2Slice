@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace AutoOutlineGenerator.Editor
 {
-    public class SpriteSettingsWriter
+    internal class SpriteSettingsWriter
     {
         private readonly TextureImporter _textureImporter;
         private readonly TextureImporterCompression _textureImporterCompression;

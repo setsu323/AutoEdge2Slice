@@ -97,31 +97,26 @@ TextureImporter:
       name: Defeated_0
       rect:
         serializedVersion: 2
-        x: 44
-        y: 30
-        width: 39
-        height: 41
+        x: 0
+        y: 0
+        width: 100
+        height: 100
       alignment: 9
-      pivot: {x: 0.15384616, y: 0.4878049}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -19.5, y: -0.5}
-        - {x: -19.5, y: -20.5}
-        - {x: -3.5, y: -20.5}
-        - {x: 17.5, y: -8.5}
-        - {x: 19.5, y: -5.5}
-        - {x: 19.5, y: -0.5}
-      - - {x: -8.5, y: 20.5}
-        - {x: -19.5, y: 6.5}
-        - {x: -19.5, y: -0.5}
-        - {x: 17.5, y: -0.5}
-        - {x: 19.5, y: 0.5}
-        - {x: 19.5, y: 9.5}
-        - {x: 11.5, y: 20.5}
+      - - {x: -50, y: 0}
+        - {x: -50, y: -50}
+        - {x: 50, y: -50}
+        - {x: 50, y: 0}
+      - - {x: -50, y: 50}
+        - {x: -50, y: 0}
+        - {x: 50, y: 0}
+        - {x: 50, y: 50}
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6b8ece373d84a1748bdf97eca540e55b
+      spriteID: 5807149126f45fb40ba09472d3a12eda
       internalID: -5090266087726099736
       vertices: []
       indices: 
@@ -131,31 +126,26 @@ TextureImporter:
       name: Defeated_1
       rect:
         serializedVersion: 2
-        x: 144
-        y: 30
-        width: 39
-        height: 41
+        x: 100
+        y: 0
+        width: 100
+        height: 100
       alignment: 9
-      pivot: {x: 0.15384616, y: 0.4878049}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -19.5, y: -0.5}
-        - {x: -19.5, y: -20.5}
-        - {x: -3.5, y: -20.5}
-        - {x: 17.5, y: -8.5}
-        - {x: 19.5, y: -5.5}
-        - {x: 19.5, y: -0.5}
-      - - {x: -8.5, y: 20.5}
-        - {x: -19.5, y: 6.5}
-        - {x: -19.5, y: -0.5}
-        - {x: 17.5, y: -0.5}
-        - {x: 19.5, y: 0.5}
-        - {x: 19.5, y: 9.5}
-        - {x: 11.5, y: 20.5}
+      - - {x: -50, y: 0}
+        - {x: -50, y: -50}
+        - {x: 50, y: -50}
+        - {x: 50, y: 0}
+      - - {x: -50, y: 50}
+        - {x: -50, y: 0}
+        - {x: 50, y: 0}
+        - {x: 50, y: 50}
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c77f5cd960b1e3b499344f5d13dc1a5c
+      spriteID: d9a45f0bee0fb554198ef6e977d02fec
       internalID: 5642732713178504336
       vertices: []
       indices: 
@@ -165,31 +155,26 @@ TextureImporter:
       name: Defeated_2
       rect:
         serializedVersion: 2
-        x: 244
-        y: 30
-        width: 39
-        height: 41
+        x: 200
+        y: 0
+        width: 100
+        height: 100
       alignment: 9
-      pivot: {x: 0.15384616, y: 0.4878049}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -19.5, y: -0.5}
-        - {x: -19.5, y: -20.5}
-        - {x: -3.5, y: -20.5}
-        - {x: 17.5, y: -8.5}
-        - {x: 19.5, y: -5.5}
-        - {x: 19.5, y: -0.5}
-      - - {x: -8.5, y: 20.5}
-        - {x: -19.5, y: 6.5}
-        - {x: -19.5, y: -0.5}
-        - {x: 17.5, y: -0.5}
-        - {x: 19.5, y: 0.5}
-        - {x: 19.5, y: 9.5}
-        - {x: 11.5, y: 20.5}
+      - - {x: -50, y: 0}
+        - {x: -50, y: -50}
+        - {x: 50, y: -50}
+        - {x: 50, y: 0}
+      - - {x: -50, y: 50}
+        - {x: -50, y: 0}
+        - {x: 50, y: 0}
+        - {x: 50, y: 50}
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 51b1646f136c6b24bba629a227d0a07c
+      spriteID: affe8b567a46b8a4b933e4ea32c0f991
       internalID: -9113130909647496064
       vertices: []
       indices: 
@@ -199,31 +184,26 @@ TextureImporter:
       name: Defeated_3
       rect:
         serializedVersion: 2
-        x: 344
-        y: 30
-        width: 39
-        height: 41
+        x: 300
+        y: 0
+        width: 100
+        height: 100
       alignment: 9
-      pivot: {x: 0.15384616, y: 0.4878049}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -19.5, y: -0.5}
-        - {x: -19.5, y: -20.5}
-        - {x: -3.5, y: -20.5}
-        - {x: 17.5, y: -8.5}
-        - {x: 19.5, y: -5.5}
-        - {x: 19.5, y: -0.5}
-      - - {x: -8.5, y: 20.5}
-        - {x: -19.5, y: 6.5}
-        - {x: -19.5, y: -0.5}
-        - {x: 17.5, y: -0.5}
-        - {x: 19.5, y: 0.5}
-        - {x: 19.5, y: 9.5}
-        - {x: 11.5, y: 20.5}
+      - - {x: -50, y: 0}
+        - {x: -50, y: -50}
+        - {x: 50, y: -50}
+        - {x: 50, y: 0}
+      - - {x: -50, y: 50}
+        - {x: -50, y: 0}
+        - {x: 50, y: 0}
+        - {x: 50, y: 50}
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c846a3a5ec77a4845a2cf4dcd4ef537f
+      spriteID: a96e77b1bb686ca46b2c4d12a222de0f
       internalID: 1175485771871903453
       vertices: []
       indices: 
@@ -233,31 +213,26 @@ TextureImporter:
       name: Defeated_4
       rect:
         serializedVersion: 2
-        x: 444
-        y: 30
-        width: 39
-        height: 41
+        x: 400
+        y: 0
+        width: 100
+        height: 100
       alignment: 9
-      pivot: {x: 0.15384616, y: 0.4878049}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -19.5, y: -0.5}
-        - {x: -19.5, y: -20.5}
-        - {x: -3.5, y: -20.5}
-        - {x: 17.5, y: -8.5}
-        - {x: 19.5, y: -5.5}
-        - {x: 19.5, y: -0.5}
-      - - {x: -8.5, y: 20.5}
-        - {x: -19.5, y: 6.5}
-        - {x: -19.5, y: -0.5}
-        - {x: 17.5, y: -0.5}
-        - {x: 19.5, y: 0.5}
-        - {x: 19.5, y: 9.5}
-        - {x: 11.5, y: 20.5}
+      - - {x: -50, y: 0}
+        - {x: -50, y: -50}
+        - {x: 50, y: -50}
+        - {x: 50, y: 0}
+      - - {x: -50, y: 50}
+        - {x: -50, y: 0}
+        - {x: 50, y: 0}
+        - {x: 50, y: 50}
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2eeec94d6107a6e4fab1c7cb09959284
+      spriteID: dd6403220f559dc40a2bfbf029383a05
       internalID: 8385917484109759469
       vertices: []
       indices: 

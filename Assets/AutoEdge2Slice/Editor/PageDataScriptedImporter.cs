@@ -9,14 +9,8 @@ using UnityEngine;
 
 namespace AutoOutlineGenerator.Editor
 {
-    [ScriptedImporter(1,new []{"edgpd"})]
-    public class PageDataScriptedImporter : ScriptedImporter
+    internal static class PageDataScriptedImporter
     {
-        public override void OnImportAsset(AssetImportContext ctx)
-        {
-            ImportSpriteAsset(ctx.assetPath);
-        }
-
         public static void ImportSpriteAsset(string path)
         {
             var targetTexture = AssetDatabase.LoadAssetAtPath<Texture2D>(GetTextureTargetPath(path));
