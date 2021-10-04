@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
 using UnityEditor.U2D.Sprites;
@@ -10,18 +9,18 @@ namespace AutoOutlineGenerator.Editor
     /// Edgeのページデータ書き出し情報を読み込んで、
     /// Unityの座標系に対応したRectとPivotを出力する。
     /// </summary>
-    public class PageDataLoader
+    public class PageShapeProvider
     {
         private readonly int _textureHeight;
         private readonly string _data;
 
-        public PageDataLoader(ITextureDataProvider textureDataProvider,string data)
+        public PageShapeProvider(ITextureDataProvider textureDataProvider,string data)
         {
             _data = data;
             textureDataProvider.GetTextureActualWidthAndHeight(out _, out _textureHeight);
         }
 
-        public PageDataLoader(int textureHeight, string data)
+        public PageShapeProvider(int textureHeight, string data)
         {
             _data = data;
             _textureHeight = textureHeight;

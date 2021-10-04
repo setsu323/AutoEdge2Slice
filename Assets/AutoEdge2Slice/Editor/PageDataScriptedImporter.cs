@@ -29,7 +29,7 @@ namespace AutoOutlineGenerator.Editor
             var autoSpriteDivider = new SpriteDivider(spriteEditorDataProvider, targetTexture.name);
             var outlineOptimizer = new VerticalSplitOutlineGenerator(spriteEditorDataProvider);
 
-            var pageDataDivider = new PageDataLoader(spriteEditorDataProvider.GetDataProvider<ITextureDataProvider>(),
+            var pageDataDivider = new PageShapeProvider(spriteEditorDataProvider.GetDataProvider<ITextureDataProvider>(),
                 File.ReadAllText(path));
             
             pageDataDivider.GetPageData(out var rectInt,out var pivot);

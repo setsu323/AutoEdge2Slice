@@ -55,7 +55,7 @@
      <Compile Include="Assets\AutoEdge2Slice\Editor\OutlineModules.cs" />
      <Compile Include="Assets\AutoEdge2Slice\Editor\SpriteSettings.cs" />
      <Compile Include="Assets\AutoEdge2Slice\Editor\SpriteSettingsWriter.cs" />
-     <Compile Include="Assets\AutoEdge2Slice\Editor\PageDataLoader.cs" />
+     <Compile Include="Assets\AutoEdge2Slice\Editor\PageShapeProvider.cs" />
      <Compile Include="Assets\AutoEdge2Slice\Editor\SpriteDivider.cs" />
      <Compile Include="Assets\AutoEdge2Slice\Editor\PageDataScriptedImporter.cs" />
      <Compile Include="Assets\AutoEdge2Slice\Editor\EdgePageDataPostProcessor.cs" />
