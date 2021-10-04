@@ -3,7 +3,7 @@ using UnityEditor.U2D.Sprites;
 
 namespace AutoEdge2Slice.Editor
 {
-    internal interface IOutlineGenerator
+    public interface IOutlineGenerator
     {
         void GenerateOutline();
     }

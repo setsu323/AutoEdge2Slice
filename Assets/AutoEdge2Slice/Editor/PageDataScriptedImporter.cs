@@ -20,10 +20,8 @@ namespace AutoEdge2Slice.Editor
 
             var spriteDivider = new SpriteDivider(spriteEditorDataProvider, targetTexture.name);
 
-            IOutlineGenerator outlineGenerator = null;
-            outlineGenerator = new VerticalSplitOutlineGenerator(spriteEditorDataProvider, 0.3f);
-
-
+            var outlineGenerator = GetOutlineGeneratorFactory().Create(spriteEditorDataProvider);
+            
             var pageDataDivider = new PageShapeProvider(spriteEditorDataProvider.GetDataProvider<ITextureDataProvider>(),
                 File.ReadAllText(path));
             
@@ -35,6 +33,11 @@ namespace AutoEdge2Slice.Editor
             AssetDatabase.ImportAsset(GetTextureTargetPath(path));
         }
 
+        private static BaseOutlineGeneratorFactory GetOutlineGeneratorFactory()
+        {
+            const string path = "Assets/AutoEdge2Slice/Editor/OutlineGeneratorFactory.asset";
+            return AssetDatabase.LoadAssetAtPath<BaseOutlineGeneratorFactory>(path);
+        }
         private static ISpriteEditorDataProvider GetSpriteEditorDataProvider(Texture2D texture2D)
         {
             var factories = new SpriteDataProviderFactories();                
