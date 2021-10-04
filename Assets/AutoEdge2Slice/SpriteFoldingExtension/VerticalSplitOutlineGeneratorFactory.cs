@@ -2,7 +2,7 @@ using AutoEdge2Slice.Editor;
 using UnityEditor.U2D.Sprites;
 using UnityEngine;
 
-namespace AutoEdge2Slice.SpriteFoldingExtension
+namespace SpriteFoldingExtension
 {
     [CreateAssetMenu(fileName = "OutlineGeneratorFactory", menuName = "AutoEdge2Slice/VerticalSplitOutlineGeneratorFactory", order = 0)]
     public class VerticalSplitOutlineGeneratorFactory : BaseOutlineGeneratorFactory

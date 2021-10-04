@@ -2,7 +2,7 @@ using AutoEdge2Slice.Editor;
 using AutoOutlineGenerator.SpriteExtension;
 using UnityEditor.U2D.Sprites;
 
-namespace AutoEdge2Slice.SpriteFoldingExtension
+namespace SpriteFoldingExtension
 {
     /// <summary>
     /// SpriteのPivot位置を基準に上下にOutlineを生成する

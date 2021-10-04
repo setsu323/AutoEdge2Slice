@@ -1,7 +1,8 @@
+using AutoEdge2Slice.Editor;
 using AutoOutlineGenerator.SpriteExtension;
 using UnityEditor.U2D.Sprites;
 
-namespace AutoEdge2Slice.Editor
+namespace SpriteFoldingExtension
 {
     internal class OutlineGenerator : IOutlineGenerator
     {

@@ -1,0 +1,19 @@
+{
+    "name": "SpriteFoldingExtension.Editor",
+    "rootNamespace": "",
+    "references": [
+        "AutoEdge2Slice.Editor",
+        "Unity.2D.Sprite.Editor"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

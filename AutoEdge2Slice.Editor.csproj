@@ -53,14 +53,14 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\AutoEdge2Slice\Editor\SpriteSettings.cs" />
+     <Compile Include="Assets\AutoEdge2Slice\Editor\IOutlineGenerator.cs" />
+     <Compile Include="Assets\AutoEdge2Slice\Editor\BaseOutlineGeneratorFactory.cs" />
+     <Compile Include="Assets\AutoEdge2Slice\Editor\NullOutlineGeneratorFactory.cs" />
      <Compile Include="Assets\AutoEdge2Slice\Editor\SpriteSettingsWriter.cs" />
      <Compile Include="Assets\AutoEdge2Slice\Editor\PageShapeProvider.cs" />
      <Compile Include="Assets\AutoEdge2Slice\Editor\SpriteDivider.cs" />
      <Compile Include="Assets\AutoEdge2Slice\Editor\SpriteAssetImporter.cs" />
      <Compile Include="Assets\AutoEdge2Slice\Editor\EdgePageDataPostProcessor.cs" />
-     <Compile Include="Assets\AutoEdge2Slice\Editor\BaseOutlineGeneratorFactory.cs" />
-     <Compile Include="Assets\AutoEdge2Slice\Editor\NullOutlineGeneratorFactory.cs" />
-     <Compile Include="Assets\AutoEdge2Slice\Editor\IOutlineGenerator.cs" />
      <None Include="Assets\AutoEdge2Slice\Editor\AutoEdge2Slice.Editor.asmdef" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.18f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
@@ -317,11 +317,11 @@
  <Reference Include="Unity.Burst.Cecil.Rocks">
  <HintPath>C:/Users/noesi/RiderProjects/AutoOutlineGenerator/Library/PackageCache/com.unity.burst@1.5.4/Unity.Burst.CodeGen/Unity.Burst.Cecil.Rocks.dll</HintPath>
  </Reference>
- <Reference Include="unityplastic">
- <HintPath>C:/Users/noesi/RiderProjects/AutoOutlineGenerator/Library/PackageCache/com.unity.collab-proxy@1.9.0/Lib/Editor/PlasticSCM/unityplastic.dll</HintPath>
- </Reference>
  <Reference Include="Mono.Cecil">
  <HintPath>C:/Users/noesi/RiderProjects/AutoOutlineGenerator/Library/PackageCache/com.unity.nuget.mono-cecil@1.10.1/Mono.Cecil.dll</HintPath>
+ </Reference>
+ <Reference Include="unityplastic">
+ <HintPath>C:/Users/noesi/RiderProjects/AutoOutlineGenerator/Library/PackageCache/com.unity.collab-proxy@1.9.0/Lib/Editor/PlasticSCM/unityplastic.dll</HintPath>
  </Reference>
  <Reference Include="nunit.framework">
  <HintPath>C:/Users/noesi/RiderProjects/AutoOutlineGenerator/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll</HintPath>
