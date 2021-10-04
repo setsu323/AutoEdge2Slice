@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.unity.nuget.mono-cecil": "1.10.1",
     "com.unity.2d.animation": "5.0.7",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.collab-proxy": "1.9.0",
