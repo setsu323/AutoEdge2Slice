@@ -1,8 +1,7 @@
 using UnityEditor;
-using UnityEditor.U2D.Sprites;
 using UnityEngine;
 
-namespace AutoOutlineGenerator.Editor
+namespace AutoEdge2Slice.Editor
 {
     internal class SpriteSettingsWriter
     {

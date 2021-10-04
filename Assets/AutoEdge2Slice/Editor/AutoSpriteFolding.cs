@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.U2D;
 
-namespace AutoOutlineGenerator.Editor
+namespace AutoEdge2Slice.Editor
 {
     public class AutoSpriteFolding : MonoBehaviour
     {

@@ -3,7 +3,7 @@ using System.Xml.Linq;
 using UnityEditor.U2D.Sprites;
 using UnityEngine;
 
-namespace AutoOutlineGenerator.Editor
+namespace AutoEdge2Slice.Editor
 {
     /// <summary>
     /// Edgeのページデータ書き出し情報を読み込んで、

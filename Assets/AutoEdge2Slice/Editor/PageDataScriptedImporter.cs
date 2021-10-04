@@ -1,13 +1,9 @@
-using System;
 using System.IO;
-using System.Linq;
-using System.Xml.Linq;
 using UnityEditor;
-using UnityEditor.AssetImporters;
 using UnityEditor.U2D.Sprites;
 using UnityEngine;
 
-namespace AutoOutlineGenerator.Editor
+namespace AutoEdge2Slice.Editor
 {
     internal class PageDataScriptedImporter
     {

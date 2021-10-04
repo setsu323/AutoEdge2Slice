@@ -1,6 +1,6 @@
 {
-    "name": "AutoOutlineGenerator.Editor",
-    "rootNamespace": "AutoOutlineGenerator.Editor",
+    "name": "AutoEdge2Slice.Editor",
+    "rootNamespace": "AutoEdge2Slice.Editor",
     "references": [
         "GUID:2c573e6b271651846a79655161004c5b"
     ],

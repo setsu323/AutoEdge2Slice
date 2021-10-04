@@ -1,10 +1,8 @@
-using System;
 using System.IO;
 using System.Xml.Linq;
 using UnityEditor;
-using UnityEngine;
 
-namespace AutoOutlineGenerator.Editor
+namespace AutoEdge2Slice.Editor
 {
     internal class EdgePageDataPostProcessor : AssetPostprocessor
     {

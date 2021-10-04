@@ -1,9 +1,7 @@
-using System.Diagnostics.Contracts;
 using AutoOutlineGenerator.SpriteExtension;
 using UnityEditor.U2D.Sprites;
-using UnityEngine;
 
-namespace AutoOutlineGenerator.Editor
+namespace AutoEdge2Slice.Editor
 {
     internal interface IOutlineGenerator
     {
