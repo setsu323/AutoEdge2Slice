@@ -1,19 +1,21 @@
-using System.Collections;
 using System.Collections.Generic;
-using System.Text;
-using Codice.Client.Common;
 using Unity.Collections;
-using Unity.Mathematics;
-using Unity.Plastic.Newtonsoft.Json;
-using UnityEditor.AssetImporters;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.U2D;
 
-namespace DefaultNamespace
+namespace AutoOutlineGenerator.Editor
 {
-    public class AnimationTest : MonoBehaviour
+    public class AutoSpriteFolding : MonoBehaviour
     {
+        
+#if UNITY_EDITOR
+        private void Reset()
+        {
+            _spriteRenderer = GetComponent<SpriteRenderer>();
+        }
+#endif
+        
         [SerializeField]
         private SpriteRenderer _spriteRenderer;
 
@@ -21,25 +23,25 @@ namespace DefaultNamespace
         private void Update()
         {
             var sprite = _spriteRenderer.sprite;
-
             if (ModifiedSprites.Contains(sprite)) return;
+            
+            ModifyTexCoord(sprite);
+            ModifyVertex(sprite);
             ModifiedSprites.Add(sprite);
+        }
 
+        private void ModifyTexCoord(Sprite sprite)
+        {
             var texCoord = sprite.GetVertexAttribute<Vector2>(VertexAttribute.TexCoord0);
             var texCoordArray = new NativeArray<Vector2>(texCoord.ToArray(), Allocator.Temp);
             sprite.SetVertexAttribute<Vector2>(VertexAttribute.TexCoord0, texCoordArray);
-            
-            var s = sprite.GetVertexAttribute<Vector3>(UnityEngine.Rendering.VertexAttribute.Position);
-            var builder = new StringBuilder();
-            for (var i = 0; i < s.Length; i++)
-            {
-                builder.Append(s[i].ToString());
-            }
-            
-            var set = ConvertVertex(s);
-            sprite.SetVertexAttribute<Vector3>(UnityEngine.Rendering.VertexAttribute.Position,set);
+        }
 
-            Debug.Log(builder);
+        private void ModifyVertex(Sprite sprite)
+        {
+            var s = sprite.GetVertexAttribute<Vector3>(VertexAttribute.Position);
+            var set = ConvertVertex(s);
+            sprite.SetVertexAttribute<Vector3>(VertexAttribute.Position,set);
         }
 
         private NativeArray<Vector3> ConvertVertex(NativeSlice<Vector3> native)

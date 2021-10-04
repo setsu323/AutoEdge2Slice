@@ -12,8 +12,6 @@ namespace AutoOutlineGenerator.Editor
     internal class PageDataScriptedImporter
     {
         private IOutlineGenerator _outlineGenerator;
-        
-
         public PageDataScriptedImporter(IOutlineGenerator outlineGenerator)
         {
             _outlineGenerator = outlineGenerator;
@@ -22,19 +20,20 @@ namespace AutoOutlineGenerator.Editor
         public static void ImportSpriteAsset(string path)
         {
             var targetTexture = AssetDatabase.LoadAssetAtPath<Texture2D>(GetTextureTargetPath(path));
-            
-            //textureから実装する
             var spriteEditorDataProvider = GetSpriteEditorDataProvider(targetTexture);
 
-            var autoSpriteDivider = new SpriteDivider(spriteEditorDataProvider, targetTexture.name);
-            var outlineOptimizer = new VerticalSplitOutlineGenerator(spriteEditorDataProvider);
+            var spriteDivider = new SpriteDivider(spriteEditorDataProvider, targetTexture.name);
+
+            IOutlineGenerator outlineGenerator = null;
+            outlineGenerator = new VerticalSplitOutlineGenerator(spriteEditorDataProvider, 0.3f);
+
 
             var pageDataDivider = new PageShapeProvider(spriteEditorDataProvider.GetDataProvider<ITextureDataProvider>(),
                 File.ReadAllText(path));
             
             pageDataDivider.GetPageData(out var rectInt,out var pivot);
-            autoSpriteDivider.DivideSprite(rectInt,pivot);
-            outlineOptimizer.GenerateOutline();
+            spriteDivider.DivideSprite(rectInt,pivot);
+            outlineGenerator.GenerateOutline();
             
             spriteEditorDataProvider.Apply();
             AssetDatabase.ImportAsset(GetTextureTargetPath(path));

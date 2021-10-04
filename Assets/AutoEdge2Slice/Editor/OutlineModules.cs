@@ -1,3 +1,4 @@
+using System.Diagnostics.Contracts;
 using AutoOutlineGenerator.SpriteExtension;
 using UnityEditor.U2D.Sprites;
 using UnityEngine;
@@ -8,8 +9,9 @@ namespace AutoOutlineGenerator.Editor
     {
         void GenerateOutline();
     }
+
     /// <summary>
-    /// Spriteの情報からOutlineを生成するGenerator
+    /// SpriteのPivot位置を基準に上下にOutlineを生成する
     /// </summary>
     internal class VerticalSplitOutlineGenerator : IOutlineGenerator
     {
@@ -17,10 +19,12 @@ namespace AutoOutlineGenerator.Editor
         private readonly ISpriteEditorDataProvider _spriteEditorDataProvider;
         private readonly ISpriteOutlineDataProvider _spriteOutlineDataProvider;
         private readonly ITextureDataProvider _textureDataProvider;
+        private readonly float _detail;
 
-        public VerticalSplitOutlineGenerator(ISpriteEditorDataProvider spriteEditorDataProvider)
+        public VerticalSplitOutlineGenerator(ISpriteEditorDataProvider spriteEditorDataProvider,float detail)
         {
             _spriteEditorDataProvider = spriteEditorDataProvider;
+            _detail = detail;
             _spriteOutlineDataProvider = spriteEditorDataProvider.GetDataProvider<ISpriteOutlineDataProvider>();
             _textureDataProvider = spriteEditorDataProvider.GetDataProvider<ITextureDataProvider>();
         }
@@ -30,7 +34,7 @@ namespace AutoOutlineGenerator.Editor
             var spriteRects = _spriteEditorDataProvider.GetSpriteRects();
             foreach (var spriteRect in spriteRects)
             {
-                var outlines = ShapeEditorExtension.GenerateSplitRectOutline(spriteRect,0,1,_textureDataProvider);
+                var outlines = ShapeEditorExtension.GenerateSplitRectOutline(spriteRect,_detail,0,_textureDataProvider);
                 _spriteOutlineDataProvider.SetOutlines(spriteRect.spriteID, outlines);
             }
             _spriteEditorDataProvider.Apply();
