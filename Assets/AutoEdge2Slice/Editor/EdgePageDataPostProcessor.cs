@@ -17,7 +17,7 @@ namespace AutoEdge2Slice.Editor
                     var document = XDocument.Parse(File.ReadAllText(importedAssetPath));
                     if (document.Root.Name == "ExportedPages")
                     {
-                        PageDataScriptedImporter.ImportSpriteAsset(importedAssetPath);
+                        SpriteAssetImporter.ImportSpriteAsset(importedAssetPath);
                     }
                 }
             }

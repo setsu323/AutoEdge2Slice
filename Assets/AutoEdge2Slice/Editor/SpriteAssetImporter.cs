@@ -5,14 +5,8 @@ using UnityEngine;
 
 namespace AutoEdge2Slice.Editor
 {
-    internal class PageDataScriptedImporter
+    internal static class SpriteAssetImporter
     {
-        private IOutlineGenerator _outlineGenerator;
-        public PageDataScriptedImporter(IOutlineGenerator outlineGenerator)
-        {
-            _outlineGenerator = outlineGenerator;
-        }
-
         public static void ImportSpriteAsset(string path)
         {
             var targetTexture = AssetDatabase.LoadAssetAtPath<Texture2D>(GetTextureTargetPath(path));
