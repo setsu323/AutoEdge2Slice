@@ -53,7 +53,7 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\AutoEdge2Slice\Editor\IOutlineGenerator.cs" />
-     <Compile Include="Assets\AutoEdge2Slice\Editor\OutlineModules.cs" />
+     <Compile Include="Assets\AutoEdge2Slice\Editor\OutlineGenerator.cs" />
      <Compile Include="Assets\AutoEdge2Slice\Editor\SpriteSettings.cs" />
      <Compile Include="Assets\AutoEdge2Slice\Editor\AutoSpriteFolding.cs" />
      <Compile Include="Assets\AutoEdge2Slice\Editor\SpriteSettingsWriter.cs" />
