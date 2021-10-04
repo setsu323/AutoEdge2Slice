@@ -6,19 +6,28 @@ using UnityEngine;
 
 namespace AutoOutlineGenerator.Editor
 {
-    internal class PageDataDivider
+    /// <summary>
+    /// Edgeのページデータ書き出し情報を読み込んで、
+    /// Unityの座標系に対応したRectとPivotを出力する。
+    /// </summary>
+    public class PageDataLoader
     {
-        private int _textureWidth;
-        private int _textureHeight;
-        private string _data;
+        private readonly int _textureHeight;
+        private readonly string _data;
 
-        public PageDataDivider(ITextureDataProvider textureDataProvider,string data)
+        public PageDataLoader(ITextureDataProvider textureDataProvider,string data)
         {
             _data = data;
-            textureDataProvider.GetTextureActualWidthAndHeight(out _textureWidth, out _textureHeight);
+            textureDataProvider.GetTextureActualWidthAndHeight(out _, out _textureHeight);
         }
 
-        public void SetPageData(out Rect[] rect, out Vector2[] pivot)
+        public PageDataLoader(int textureHeight, string data)
+        {
+            _data = data;
+            _textureHeight = textureHeight;
+        }
+
+        public void GetPageData(out Rect[] rect, out Vector2[] pivot)
         {
             var document = XDocument.Parse(_data);
             var root = document.Root;
@@ -33,7 +42,7 @@ namespace AutoOutlineGenerator.Editor
             pivot = rects.Zip(destPos, (rect, pos) => ConvertDestPosToPivot(rect, pos, useCenter)).ToArray();
         }
 
-        private Vector2 ConvertDestPosToPivot(Rect rect,Vector2 destPos,bool useCenter)
+        private static Vector2 ConvertDestPosToPivot(Rect rect,Vector2 destPos,bool useCenter)
         {
             var pivotPos = -destPos;
             if (useCenter)
@@ -53,12 +62,6 @@ namespace AutoOutlineGenerator.Editor
             return ConvertRectCoordinate(rect);
         }
 
-        private Vector2 GetDestPos(string value)
-        {
-            var pivot = value.Split(',').Select(int.Parse).ToArray();
-            return new Vector2(pivot[0], pivot[1]);
-        }
-        
         /// <summary>
         /// Edge2の座標系からTexture2Dの座標系に変換する
         /// </summary>
@@ -68,5 +71,13 @@ namespace AutoOutlineGenerator.Editor
         {
             return new Rect(rectInt.xMin, _textureHeight - rectInt.yMax, rectInt.size.x, rectInt.size.y);
         }
+        
+        private static Vector2 GetDestPos(string value)
+        {
+            var pivot = value.Split(',').Select(int.Parse).ToArray();
+            return new Vector2(pivot[0], pivot[1]);
+        }
+        
+
     }
 }

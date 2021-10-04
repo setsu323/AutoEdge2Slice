@@ -9,8 +9,16 @@ using UnityEngine;
 
 namespace AutoOutlineGenerator.Editor
 {
-    internal static class PageDataScriptedImporter
+    internal class PageDataScriptedImporter
     {
+        private IOutlineGenerator _outlineGenerator;
+        
+
+        public PageDataScriptedImporter(IOutlineGenerator outlineGenerator)
+        {
+            _outlineGenerator = outlineGenerator;
+        }
+
         public static void ImportSpriteAsset(string path)
         {
             var targetTexture = AssetDatabase.LoadAssetAtPath<Texture2D>(GetTextureTargetPath(path));
@@ -21,10 +29,10 @@ namespace AutoOutlineGenerator.Editor
             var autoSpriteDivider = new SpriteDivider(spriteEditorDataProvider, targetTexture.name);
             var outlineOptimizer = new VerticalSplitOutlineGenerator(spriteEditorDataProvider);
 
-            var pageDataDivider = new PageDataDivider(spriteEditorDataProvider.GetDataProvider<ITextureDataProvider>(),
+            var pageDataDivider = new PageDataLoader(spriteEditorDataProvider.GetDataProvider<ITextureDataProvider>(),
                 File.ReadAllText(path));
             
-            pageDataDivider.SetPageData(out var rectInt,out var pivot);
+            pageDataDivider.GetPageData(out var rectInt,out var pivot);
             autoSpriteDivider.DivideSprite(rectInt,pivot);
             outlineOptimizer.GenerateOutline();
             
