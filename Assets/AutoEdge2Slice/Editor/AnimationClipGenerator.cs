@@ -14,20 +14,22 @@ namespace AutoEdge2Slice.Editor
         /// ただしアセット化は行わない。
         /// </summary>
         /// <returns></returns>
-        public AnimationClip CreateAnimationClip(Sprite[] sprites,float[] times)
+        public AnimationClip CreateAnimationClip(Sprite[] sprites,XDocument document)
         {
             var clip = new AnimationClip();
             var settings = new AnimationClipSettings();
             AnimationUtility.SetAnimationClipSettings(clip, settings);
 
-            var objectReferenceKeyframes = GetAnimationData(null, new Sprite[0]).ToArray();
+            
+            
+            var objectReferenceKeyframes = GetAnimationData(document, sprites).ToArray();
             
             var editorCurveBinding = EditorCurveBinding.PPtrCurve("", typeof(SpriteRenderer), "m_Sprite");
             AnimationUtility.SetObjectReferenceCurve(clip, editorCurveBinding, objectReferenceKeyframes);
             return clip;
         }
 
-        public static IEnumerable<ObjectReferenceKeyframe> GetAnimationData(XDocument document,IEnumerable<Sprite> targetSprites)
+        private static IEnumerable<ObjectReferenceKeyframe> GetAnimationData(XDocument document,IEnumerable<Sprite> targetSprites)
         {
             var root = document.Root;
             var pages = root?.Elements("Page");
@@ -41,9 +43,6 @@ namespace AutoEdge2Slice.Editor
             
             return targetSprites.Zip(times, (s, t) => new ObjectReferenceKeyframe() { time = t, value = s });
         }
-
-
-
 
         public AnimationClipSettings GetAnimationClipSettings()
         {
