@@ -65,6 +65,7 @@
      <Compile Include="Assets\AutoEdge2Slice\Editor\EnumerableExtensions.cs" />
      <Compile Include="Assets\AutoEdge2Slice\Editor\AnimationClipDataProvider.cs" />
      <Compile Include="Assets\AutoEdge2Slice\Editor\GenerateAnimationClipWindow.cs" />
+     <Compile Include="Assets\AutoEdge2Slice\Editor\ListViewExampleWindow.cs" />
      <None Include="Assets\AutoEdge2Slice\Editor\AutoEdge2Slice.Editor.asmdef" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.18f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
