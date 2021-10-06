@@ -2,12 +2,12 @@
 
 <ExportedPages>
 	<Coordinate>1</Coordinate>
-	<DelayUnit>0</DelayUnit>
+	<DelayUnit>3</DelayUnit>
 	<Page>
-		<Name>ダウン</Name>
+		<Name></Name>
 		<ExportRect>0,0,100,100</ExportRect>
 		<DestPos>0,0</DestPos>
-		<Delay>20</Delay>
+		<Delay>3</Delay>
 		<Transparent>1</Transparent>
 		<AfterMode>2</AfterMode>
 	</Page>
@@ -15,7 +15,7 @@
 		<Name>ダウン</Name>
 		<ExportRect>100,0,100,100</ExportRect>
 		<DestPos>0,0</DestPos>
-		<Delay>20</Delay>
+		<Delay>3</Delay>
 		<Transparent>1</Transparent>
 		<AfterMode>2</AfterMode>
 	</Page>
@@ -23,7 +23,7 @@
 		<Name>ダウン</Name>
 		<ExportRect>200,0,100,100</ExportRect>
 		<DestPos>0,0</DestPos>
-		<Delay>20</Delay>
+		<Delay>3</Delay>
 		<Transparent>1</Transparent>
 		<AfterMode>2</AfterMode>
 	</Page>
@@ -31,7 +31,7 @@
 		<Name>ダウン</Name>
 		<ExportRect>300,0,100,100</ExportRect>
 		<DestPos>0,0</DestPos>
-		<Delay>40</Delay>
+		<Delay>6</Delay>
 		<Transparent>1</Transparent>
 		<AfterMode>2</AfterMode>
 	</Page>
@@ -39,7 +39,7 @@
 		<Name>ダウン</Name>
 		<ExportRect>400,0,100,100</ExportRect>
 		<DestPos>0,0</DestPos>
-		<Delay>20</Delay>
+		<Delay>3</Delay>
 		<Transparent>1</Transparent>
 		<AfterMode>2</AfterMode>
 	</Page>
@@ -47,7 +47,7 @@
 		<Name>ダウン</Name>
 		<ExportRect>500,0,100,100</ExportRect>
 		<DestPos>0,0</DestPos>
-		<Delay>20</Delay>
+		<Delay>3</Delay>
 		<Transparent>1</Transparent>
 		<AfterMode>2</AfterMode>
 	</Page>
@@ -55,7 +55,7 @@
 		<Name>ダウン</Name>
 		<ExportRect>600,0,100,100</ExportRect>
 		<DestPos>0,0</DestPos>
-		<Delay>60</Delay>
+		<Delay>10</Delay>
 		<Transparent>1</Transparent>
 		<AfterMode>2</AfterMode>
 	</Page>

@@ -34,11 +34,13 @@ namespace AutoEdge2Slice.Editor
             var root = document.Root;
             var pages = root?.Elements("Page");
             if (pages == null) throw new NullReferenceException("XMLファイルにPageが存在しません");
-            
+
+            var delayUnit = root?.Element("DelayUnit")?.Value;
+
             var times = pages.Select(x =>
             {
                 var delayString = x.Element("Delay")?.Value;
-                return delayString == null ? 0 : float.Parse(delayString);
+                return delayString == null ? 0f : float.Parse(delayString);
             }).PreScan(0f, (s, r) => s + r);
             
             return targetSprites.Zip(times, (s, t) => new ObjectReferenceKeyframe() { time = t, value = s });
