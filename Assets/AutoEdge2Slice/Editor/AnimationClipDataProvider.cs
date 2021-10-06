@@ -22,7 +22,7 @@ namespace AutoEdge2Slice.Editor
         internal bool TryGetSprites(string xmlPath,out Sprite[] sprites)
         {
             var spritePath = Path.ChangeExtension(xmlPath, "png");
-            sprites = AssetDatabase.LoadAllAssetsAtPath(spritePath).Cast<Sprite>().ToArray();
+            sprites = AssetDatabase.LoadAllAssetsAtPath(spritePath).OfType<Sprite>().ToArray();
             return sprites != null && sprites.Length != 0;
         }
     }

@@ -1,8 +1,11 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEditor;
+using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.UIElements;
+using Object = UnityEngine.Object;
 
 namespace AutoEdge2Slice.Editor
 {
@@ -40,11 +43,23 @@ namespace AutoEdge2Slice.Editor
 
             listView.selectionType = SelectionType.Multiple;
 
-            listView.onItemsChosen += objects => Debug.Log(objects);
-            listView.onSelectionChange += objects => Debug.Log(objects);
+            listView.onItemsChosen += objects =>
+            {
+                foreach (var obj in objects)
+                {
+                    Debug.Log(obj + " has been chosen");
+                }
+            };
+            listView.onSelectionChange += objects =>
+            {
+                foreach (var obj in objects)
+                {
+                    Debug.Log(obj + " selection changed");
+                }
+            };
 
             listView.style.flexGrow = 1.0f;
-
+            
             rootVisualElement.Add(listView);
         }
     }

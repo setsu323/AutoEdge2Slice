@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using UnityEditor;
 using UnityEditor.UIElements;
 using UnityEngine;
@@ -8,6 +9,7 @@ namespace AutoEdge2Slice.Editor
 {
     public class GenerateAnimationClipWindow : EditorWindow
     {
+        [MenuItem("Tools/AnimationGenerator")]
         public static void ShowWindow()
         {
             CreateWindow<GenerateAnimationClipWindow>();
@@ -16,11 +18,9 @@ namespace AutoEdge2Slice.Editor
         private void OnEnable()
         {
             var dataProvider = new AnimationClipDataProvider();
-            
-            //パス用のフィールド
-            var pathListField = new ListView();
-            
-            var pathField = new ObjectField() { objectType = typeof(TextAsset[]), label = "path" };
+            var animationClipGenerator = new AnimationClipGenerator();
+
+            var pathField = new ObjectField() { objectType = typeof(TextAsset), label = "path" };
             pathField.RegisterValueChangedCallback(changeEvent =>
             {
                 var path = AssetDatabase.GetAssetPath(changeEvent.newValue);
@@ -30,18 +30,31 @@ namespace AutoEdge2Slice.Editor
                     //spriteの表示を行う
                     if(dataProvider.TryGetSprites(path,out var sprites))
                     {
-                        //imageの表示とbuttonの表示を行う
-                        var image = new Image() { image = sprites[0].texture };
-                        var generateAnimationClipButton = new Button(() =>
-                        {
 
-                        });
+                        var spriteImage = rootVisualElement.Query<Image>(name: "spriteImage").First();
+                        if (spriteImage == null)
+                        {
+                            spriteImage = new Image() { name = "spriteImage"};
+                            rootVisualElement.Add(spriteImage);
+                        }
+                        spriteImage.image = sprites[0].texture;
+
+                        var button = rootVisualElement.Query<Button>("generateButton").First();
+                        if (button == null)
+                        {
+                            button = new Button() { name = "generateButton" };
+                            rootVisualElement.Add(button);
+                        }
+
+                        button.clicked += () =>
+                        {
+                            var clip = animationClipGenerator.CreateAnimationClip(sprites, document);
+                            AssetDatabase.CreateAsset(clip, Path.ChangeExtension(path, "anim"));
+                        };
                     }
                 }
             });
-            var image = new Image() { };
-
-            EditorUtility.DisplayDialog("title", "Animationが既に存在します。上書きしますか？", "Ok", "Skip");
+            rootVisualElement.Add(pathField);
         }
     }
 }
