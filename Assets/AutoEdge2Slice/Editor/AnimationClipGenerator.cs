@@ -34,25 +34,18 @@ namespace AutoEdge2Slice.Editor
             var root = document.Root;
             var pages = root?.Elements("Page");
             if (pages == null) throw new NullReferenceException("XMLファイルにPageが存在しません");
-
+            var unit = DelayUnitSettingsConverter.ToUnit(document);
+            
+            
             var delayUnit = root?.Element("DelayUnit")?.Value;
 
             var times = pages.Select(x =>
             {
                 var delayString = x.Element("Delay")?.Value;
-                return delayString == null ? 0f : float.Parse(delayString);
-            }).PreScan(0f, (s, r) => s + r);
+                return delayString == null ? 0f : float.Parse(delayString)/unit;
+            }).Append(0).PreScan(0f, (s, r) => s + r);
             
-            return targetSprites.Zip(times, (s, t) => new ObjectReferenceKeyframe() { time = t, value = s });
-        }
-
-        public AnimationClipSettings GetAnimationClipSettings()
-        {
-            return new AnimationClipSettings()
-            {
-                stopTime = 10,
-                startTime = 0,
-            };
+            return targetSprites.Append(targetSprites.Last()).Zip(times, (s, t) => new ObjectReferenceKeyframe() { time = t, value = s });
         }
     }
 }
