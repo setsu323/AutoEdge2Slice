@@ -50,7 +50,6 @@ namespace AutoEdge2Slice.Editor
                         {
                             var clip = animationClipGenerator.CreateAnimationClip(sprites, document);
                             AssetDatabase.CreateAsset(clip, Path.ChangeExtension(path, "anim"));
-                            AssetDatabase.Refresh();
                         };
                     }
                 }
