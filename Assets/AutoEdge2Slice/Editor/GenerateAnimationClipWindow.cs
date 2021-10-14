@@ -52,8 +52,17 @@ namespace AutoEdge2Slice.Editor
                             var loadedClip = AssetDatabase.LoadAssetAtPath<AnimationClip>(clipPath);
                             if (loadedClip != null)
                             {
-                                animationClipGenerator.ModifyAnimationClip(loadedClip, sprites, document);
-                                AssetDatabase.ImportAsset(clipPath);
+                                var result = EditorUtility.DisplayDialogComplex(clipPath,
+                                    "既に同名のアニメーションクリップが存在します、上書きしますか？", "上書きする", "名前を変更して保存", "中止");
+                                if (result == 0)
+                                {
+                                    animationClipGenerator.ModifyAnimationClip(loadedClip, sprites, document);
+                                    AssetDatabase.ImportAsset(clipPath);
+                                }else if(result == 1)
+                                {
+                                    var clip = animationClipGenerator.CreateAnimationClip(sprites, document);
+                                    AssetDatabase.CreateAsset(clip,AssetDatabase.GenerateUniqueAssetPath(clipPath));
+                                }
                             }
                             else
                             {
