@@ -20,8 +20,11 @@ Unityのプロジェクト内のフォルダを選び保存すると、
 
 ### AnimationClipの生成
 UnityにおいてTools/AnimationGeneratorからウィンドウを開きます。<br>
+
 Edge2XMLファイルをフィールドにセットするとSpriteとButtonが表示されます。<br>
+
 AnimationClipを生成するButtonを押すと、AnimationClipが生成されます。<br>
+
 既に同名のAnimationClipがある場合は、<br>
 上書きするか、別ファイルとして保存するか、<br>
 を選ぶことが出来ます。<br>
