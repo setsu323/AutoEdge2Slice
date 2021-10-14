@@ -17,10 +17,13 @@ namespace AutoEdge2Slice.Editor
         public AnimationClip CreateAnimationClip(Sprite[] sprites,XDocument document)
         {
             var clip = new AnimationClip();
+            return ModifyAnimationClip(clip, sprites, document);
+        }
+
+        public AnimationClip ModifyAnimationClip(AnimationClip clip, Sprite[] sprites, XDocument document)
+        {
             var settings = new AnimationClipSettings();
             AnimationUtility.SetAnimationClipSettings(clip, settings);
-
-            
             
             var objectReferenceKeyframes = GetAnimationData(document, sprites).ToArray();
             
