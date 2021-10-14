@@ -20,7 +20,7 @@ namespace AutoEdge2Slice.Editor
             var dataProvider = new AnimationClipDataProvider();
             var animationClipGenerator = new AnimationClipGenerator();
 
-            var pathField = new ObjectField() { objectType = typeof(TextAsset), label = "path" };
+            var pathField = new ObjectField() { objectType = typeof(TextAsset), label = "Edge2XMLファイル" };
             pathField.RegisterValueChangedCallback(changeEvent =>
             {
                 var path = AssetDatabase.GetAssetPath(changeEvent.newValue);
@@ -42,7 +42,7 @@ namespace AutoEdge2Slice.Editor
                         var button = rootVisualElement.Query<Button>("generateButton").First();
                         if (button == null)
                         {
-                            button = new Button() { name = "generateButton" };
+                            button = new Button() { name = "generateButton", text = "AnimationClipを生成する"};
                             rootVisualElement.Add(button);
                         }
 
@@ -53,12 +53,12 @@ namespace AutoEdge2Slice.Editor
                             if (loadedClip != null)
                             {
                                 var result = EditorUtility.DisplayDialogComplex(clipPath,
-                                    "既に同名のアニメーションクリップが存在します、上書きしますか？", "上書きする", "名前を変更して保存", "中止");
+                                    "既に同名のアニメーションクリップが存在します、上書きしますか？", "上書きする","中止","別ファイルとして保存");
                                 if (result == 0)
                                 {
                                     animationClipGenerator.ModifyAnimationClip(loadedClip, sprites, document);
                                     AssetDatabase.ImportAsset(clipPath);
-                                }else if(result == 1)
+                                }else if(result == 2)
                                 {
                                     var clip = animationClipGenerator.CreateAnimationClip(sprites, document);
                                     AssetDatabase.CreateAsset(clip,AssetDatabase.GenerateUniqueAssetPath(clipPath));
