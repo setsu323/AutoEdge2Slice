@@ -15,6 +15,7 @@ namespace AutoEdge2Slice.Editor
             CreateWindow<GenerateAnimationClipWindow>();
         }
 
+        private Action _preAction;
         private void OnEnable()
         {
             var dataProvider = new AnimationClipDataProvider();
@@ -46,31 +47,38 @@ namespace AutoEdge2Slice.Editor
                             rootVisualElement.Add(button);
                         }
 
-                        button.clicked += () =>
+                        if (_preAction != null)
                         {
-                            var clipPath = Path.ChangeExtension(path, "anim");
+                            button.clicked -= _preAction;
+                        }
+                        _preAction = new Action(() =>
+                        {
+                            var clipPath = Path.ChangeExtension(path, "anim"); 
                             var loadedClip = AssetDatabase.LoadAssetAtPath<AnimationClip>(clipPath);
                             if (loadedClip != null)
                             {
                                 var result = EditorUtility.DisplayDialogComplex(clipPath,
-                                    "既に同名のアニメーションクリップが存在します、上書きしますか？", "上書きする","中止","別ファイルとして保存");
+                                    "既に同名のアニメーションクリップが存在します、上書きしますか？", "上書きする", "中止", "別ファイルとして保存");
                                 if (result == 0)
                                 {
                                     animationClipGenerator.ModifyAnimationClip(loadedClip, sprites, document);
                                     AssetDatabase.ImportAsset(clipPath);
-                                }else if(result == 2)
+                                }
+                                else if (result == 2)
                                 {
                                     var clip = animationClipGenerator.CreateAnimationClip(sprites, document);
-                                    AssetDatabase.CreateAsset(clip,AssetDatabase.GenerateUniqueAssetPath(clipPath));
+                                    AssetDatabase.CreateAsset(clip, AssetDatabase.GenerateUniqueAssetPath(clipPath));
                                 }
                             }
                             else
                             {
                                 var clip = animationClipGenerator.CreateAnimationClip(sprites, document);
-                                AssetDatabase.CreateAsset(clip, clipPath);    
+                                AssetDatabase.CreateAsset(clip, clipPath);
                             }
-                            
-                        };
+
+                        });
+                        button.clicked += _preAction;
+
                     }
                 }
             });

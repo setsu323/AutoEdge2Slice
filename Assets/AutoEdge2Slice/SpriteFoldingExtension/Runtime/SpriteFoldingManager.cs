@@ -5,11 +5,16 @@ namespace SpriteFoldingExtension.Runtime
 {
     public class SpriteFoldingManager
     {
-        private HashSet<Sprite> _modifiedHashSets = new HashSet<Sprite>();
+        private static readonly HashSet<Sprite> ModifiedHashSets = new HashSet<Sprite>();
 
-        public bool IsModified(Sprite sprite)
+        public static bool IsModified(Sprite sprite)
         {
-            return _modifiedHashSets.Contains(sprite);
+            return ModifiedHashSets.Contains(sprite);
+        }
+
+        public static void Add(Sprite sprite)
+        {
+            ModifiedHashSets.Add(sprite);
         }
     }
 }
