@@ -19,10 +19,18 @@ namespace AutoEdge2Slice.Editor
                     {
                         SpriteAssetImporter.ImportSpriteAsset(importedAssetPath);
                     }
+
+                    //拡張子を変更するためのコード
+                    //var changed = Path.ChangeExtension(importedAssetPath, ".pad");
+                    //File.Move(importedAssetPath, changed);
+                    //AssetDatabase.Refresh();
                 }
             }
         }
 
+        /// <summary>
+        /// Edge2のpadファイルの場合、テクスチャの設定をSpriteに変更する
+        /// </summary>
         private void OnPreprocessTexture()
         {
             var textureImporter = assetImporter as TextureImporter;
