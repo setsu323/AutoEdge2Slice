@@ -62,7 +62,6 @@
      <Compile Include="Assets\AutoEdge2Slice\Editor\EnumerableExtensions.cs" />
      <Compile Include="Assets\AutoEdge2Slice\Editor\PageShapeProvider.cs" />
      <Compile Include="Assets\AutoEdge2Slice\Editor\SpriteDivider.cs" />
-     <Compile Include="Assets\AutoEdge2Slice\Editor\GenerateAnimationClipWindow.cs" />
      <Compile Include="Assets\AutoEdge2Slice\Editor\SpriteAssetImporter.cs" />
      <Compile Include="Assets\AutoEdge2Slice\Editor\EdgePageDataPostProcessor.cs" />
      <Compile Include="Assets\AutoEdge2Slice\Editor\DelayUnitSettingsConverter.cs" />

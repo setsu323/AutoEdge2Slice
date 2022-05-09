@@ -4,6 +4,9 @@ using System.Xml.Linq;
 
 namespace AutoEdge2Slice.Editor
 {
+    /// <summary>
+    /// Edge2のページデータのディレイ設定をUnity上の基準に変換するクラス
+    /// </summary>
     public static class DelayUnitSettingsConverter
     {
         internal static float ToUnit(XDocument document)

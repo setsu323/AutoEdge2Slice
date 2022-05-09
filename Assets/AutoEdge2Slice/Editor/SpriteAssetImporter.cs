@@ -29,8 +29,9 @@ namespace AutoEdge2Slice.Editor
 
         internal static BaseOutlineGeneratorFactory GetOutlineGeneratorFactory()
         {
-            const string path = "Assets/AutoEdge2Slice/Editor/OutlineGeneratorFactory.asset";
-            return AssetDatabase.LoadAssetAtPath<BaseOutlineGeneratorFactory>(path);
+            const string path = "Assets/AutoEdge2Slice/Editor/SpriteSettings.asset";
+            var settings = AssetDatabase.LoadAssetAtPath<SpriteSettings>(path);
+            return settings.OutlineGeneratorFactory;
         }
         internal static ISpriteEditorDataProvider GetSpriteEditorDataProvider(Texture2D texture2D)
         {

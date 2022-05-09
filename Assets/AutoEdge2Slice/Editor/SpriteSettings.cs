@@ -14,10 +14,13 @@ namespace AutoEdge2Slice.Editor
         [SerializeField]
         private int _maxTextureSize = 16384;
 
+        [Space(1), SerializeField] private BaseOutlineGeneratorFactory _outlineGeneratorFactory;
+
         public TextureImporterCompression TextureImporterCompression => _textureImporterCompression;
         public FilterMode FilterMode => _filterMode;
         public float PixelPerUnit => _pixelPerUnit;
         public int MaxTextureSize => _maxTextureSize;
+        public BaseOutlineGeneratorFactory OutlineGeneratorFactory => _outlineGeneratorFactory;
 
         internal static SpriteSettings GetOrCreate()
         {

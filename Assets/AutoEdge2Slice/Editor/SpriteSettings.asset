@@ -16,3 +16,4 @@ MonoBehaviour:
   _filterMode: 0
   _pixelPerUnit: 64
   _maxTextureSize: 16384
+  _outlineGeneratorFactory: {fileID: 11400000, guid: fd25d00c321304346acaacaf99550ee6, type: 2}
