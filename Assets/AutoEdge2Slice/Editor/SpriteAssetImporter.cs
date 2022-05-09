@@ -27,12 +27,12 @@ namespace AutoEdge2Slice.Editor
             AssetDatabase.ImportAsset(GetTextureTargetPath(path));
         }
 
-        private static BaseOutlineGeneratorFactory GetOutlineGeneratorFactory()
+        internal static BaseOutlineGeneratorFactory GetOutlineGeneratorFactory()
         {
             const string path = "Assets/AutoEdge2Slice/Editor/OutlineGeneratorFactory.asset";
             return AssetDatabase.LoadAssetAtPath<BaseOutlineGeneratorFactory>(path);
         }
-        private static ISpriteEditorDataProvider GetSpriteEditorDataProvider(Texture2D texture2D)
+        internal static ISpriteEditorDataProvider GetSpriteEditorDataProvider(Texture2D texture2D)
         {
             var factories = new SpriteDataProviderFactories();                
             factories.Init();
