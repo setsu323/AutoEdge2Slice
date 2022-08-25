@@ -59,9 +59,6 @@ namespace AutoEdge2Slice.Editor
                 var clip = animationClipGenerator.CreateAnimationClip(sprites, document);
                 AssetDatabase.CreateAsset(clip, clipPath);
             }
-            //var changed = Path.ChangeExtension(importedAssetPath, ".pad");
-            //File.Move(importedAssetPath, changed);
-            //AssetDatabase.Refresh();
         }
         /// <summary>
         /// Edge2のpadファイルの場合、テクスチャの設定をSpriteに変更する
