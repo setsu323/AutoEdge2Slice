@@ -22,9 +22,6 @@ namespace AutoEdge2Slice.Editor
 
         public AnimationClip ModifyAnimationClip(AnimationClip clip, Sprite[] sprites, XDocument document)
         {
-            var settings = new AnimationClipSettings();
-            AnimationUtility.SetAnimationClipSettings(clip, settings);
-            
             var objectReferenceKeyframes = GetAnimationData(document, sprites).ToArray();
             
             var editorCurveBinding = EditorCurveBinding.PPtrCurve("", typeof(SpriteRenderer), "m_Sprite");
