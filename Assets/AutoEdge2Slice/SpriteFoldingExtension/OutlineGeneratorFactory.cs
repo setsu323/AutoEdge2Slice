@@ -1,5 +1,5 @@
 using AutoEdge2Slice.Editor;
-using UnityEditor.U2D.Sprites;
+using Editor.Interface;
 using UnityEngine;
 
 namespace SpriteFoldingExtension

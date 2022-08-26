@@ -1,6 +1,6 @@
 using AutoEdge2Slice.Editor;
-using AutoOutlineGenerator.SpriteExtension;
-using UnityEditor.U2D.Sprites;
+using Editor.Interface;
+using SpriteFoldingExtension.SpriteExtension;
 
 namespace SpriteFoldingExtension
 {
