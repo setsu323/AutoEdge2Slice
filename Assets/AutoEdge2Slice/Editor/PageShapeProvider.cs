@@ -1,6 +1,6 @@
 using System.Linq;
 using System.Xml.Linq;
-using Editor.Interface;
+using UnityEditor.U2D.Sprites;
 using UnityEngine;
 
 namespace AutoEdge2Slice.Editor

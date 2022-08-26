@@ -1,6 +1,5 @@
-using Editor.Interface;
-using Editor.SpriteEditor;
 using UnityEditor;
+using UnityEditor.U2D.Sprites;
 using UnityEngine;
 
 namespace AutoEdge2Slice.Editor
