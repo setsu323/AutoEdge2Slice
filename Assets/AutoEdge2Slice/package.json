@@ -1,0 +1,13 @@
+{
+  "name": "com.revertan3.auto-edge2-slice",
+  "displayName": "AutoEdge2Slice",
+  "version": "1.0.0",
+  "unity": "2020.3",
+  "description": "You can import edge2 page animation easily",
+  "author": {
+    "name": "Revertan3",
+    "url": "https://twitter.com/revertan3"
+  },
+  "dependencies": {
+  }
+}
