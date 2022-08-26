@@ -1,9 +1,5 @@
-using System;
 using System.Linq;
-using PlasticGui.Gluon.WorkspaceWindow.Views.IncomingChanges;
 using UnityEditor;
-using UnityEditor.UIElements;
-using UnityEngine;
 
 namespace AutoEdge2Slice.Editor
 {

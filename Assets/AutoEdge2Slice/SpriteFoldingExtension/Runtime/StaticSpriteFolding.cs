@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.U2D;
 
-namespace SpriteFoldingExtension.Runtime
+namespace AutoEdge2Slice.SpriteFoldingExtension.Runtime
 {
     public class StaticSpriteFolding : MonoBehaviour
     {

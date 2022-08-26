@@ -1,12 +1,11 @@
 using System.Collections.Generic;
 using System.Linq;
-using UnityEditor;
-using UnityEditor.U2D.Sprites;
-using UnityEditor.UIElements;
+using Editor.Interface;
+using Editor.SpriteEditor;
 using UnityEngine;
 using SpriteUtility = UnityEditor.Sprites.SpriteUtility;
 
-namespace AutoOutlineGenerator.SpriteExtension
+namespace SpriteFoldingExtension.SpriteExtension
 {
     /// <summary>
     /// Outline系の操作を外に出すために必要

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace SpriteFoldingExtension.Runtime
+namespace AutoEdge2Slice.SpriteFoldingExtension.Runtime
 {
     public class SpriteFoldingManager
     {
