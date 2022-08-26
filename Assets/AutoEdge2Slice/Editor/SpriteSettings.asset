@@ -1,5 +1,17 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6626956688761947290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a80af8b20cf485ca2291590b878083b, type: 3}
+  m_Name: NullOutlineGeneratorFactory
+  m_EditorClassIdentifier: 
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16,4 +28,30 @@ MonoBehaviour:
   _filterMode: 0
   _pixelPerUnit: 64
   _maxTextureSize: 16384
-  _outlineGeneratorFactory: {fileID: 11400000, guid: fd25d00c321304346acaacaf99550ee6, type: 2}
+  _outlineGeneratorFactory: {fileID: -6626956688761947290}
+--- !u!114 &2495400406814833933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e6f6a68d77d459d8e62b45019df4830, type: 3}
+  m_Name: VerticalSplitOutlineGeneratorFactory
+  m_EditorClassIdentifier: 
+  _detail: 0
+--- !u!114 &6317236468831916580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d5a3955902549c39a40286f66021c98, type: 3}
+  m_Name: OutlineGeneratorFactory
+  m_EditorClassIdentifier: 
+  _detail: 0

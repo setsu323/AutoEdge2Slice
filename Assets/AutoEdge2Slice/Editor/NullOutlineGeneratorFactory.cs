@@ -3,7 +3,6 @@ using UnityEngine;
 
 namespace AutoEdge2Slice.Editor
 {
-    [CreateAssetMenu(fileName = "OutlineGeneratorFactory", menuName = "AutoEdge2Slice/NullOutlineGeneratorFactory", order = 0)]
     public class NullOutlineGeneratorFactory : BaseOutlineGeneratorFactory
     {
         public override IOutlineGenerator Create(ISpriteEditorDataProvider spriteEditorDataProvider)

@@ -4,7 +4,6 @@ using UnityEngine;
 
 namespace SpriteFoldingExtension
 {
-    [CreateAssetMenu(fileName = "OutlineGeneratorFactory", menuName = "AutoEdge2Slice/VerticalSplitOutlineGeneratorFactory", order = 0)]
     public class VerticalSplitOutlineGeneratorFactory : BaseOutlineGeneratorFactory
     {
         [SerializeField] private float _detail;
