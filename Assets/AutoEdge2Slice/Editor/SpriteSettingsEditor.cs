@@ -6,27 +6,6 @@ namespace AutoEdge2Slice.Editor
     [CustomEditor(typeof(SpriteSettings))]
     public class SpriteSettingsEditor : UnityEditor.Editor
     {
-        //重要なのはSpriteSettingsの内部にデータを作成すること
-        public override void OnInspectorGUI()
-        {
-            base.OnInspectorGUI();
-            //TODO 子となっているFactoryの中から選んで、このインスペクタ上で値を変更できるようにしたい。
-            // if (GUILayout.Button("全部消す"))
-            // {
-            //     var assetPath = AssetDatabase.GetAssetPath(target);
-            //     foreach (var asset in AssetDatabase.LoadAllAssetsAtPath(assetPath))
-            //     {
-            //         if (AssetDatabase.IsSubAsset(asset))
-            //         {
-            //             DestroyImmediate(asset, true);
-            //         }
-            //     }
-            //
-            //     AssetDatabase.Refresh();
-            //     AssetDatabase.SaveAssets();
-            // }
-        }
-
         private TypeCache.TypeCollection _typeCollection;
         public void OnEnable()
         {
