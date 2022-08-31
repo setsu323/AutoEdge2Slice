@@ -27,35 +27,34 @@ namespace AutoEdge2Slice.Editor
                         iter.NextVisible(true);
                         while (iter.NextVisible(false))
                         {
-                            if (iter.name == "_outlineGeneratorFactory")
+                            if (iter.name == "_outlineGeneratorFactoryType")
                             {
                                 continue;
                             }
                             EditorGUILayout.PropertyField(iter, true);
                         }
 
-                        var factoryProp = so.FindProperty("_outlineGeneratorFactory");
-                        var factory = factoryProp
-                            .objectReferenceValue;
-                        
+                        var factoryTypeNameProp = so.FindProperty("_outlineGeneratorFactoryType");
+                        var factoryTypeName = factoryTypeNameProp.stringValue;
+
                         var methods = TypeCache.GetMethodsWithAttribute<OutlineGeneratorFactoryMethodAttribute>();
                         var objects = methods.Select(m => m.Invoke(null, null) as Object).ToList();
-                        var index = objects.FindIndex(s => s == factory);
-
+                        
+                        var index = objects.FindIndex(s => s.GetType().Name == factoryTypeName);
                         index = EditorGUILayout.Popup("_factories", index,
                             objects.Select(s => s.GetType().Name).ToArray());
 
                         if (index != -1)
                         {
-                            factoryProp.objectReferenceValue = objects[index];
+                            factoryTypeNameProp.stringValue = objects[index].GetType().Name;
                         }
 
 
-                        if (factory != null)
+                        if (index != -1)
                         {
                             using (var fscope = new EditorGUI.ChangeCheckScope())
                             {
-                                var fso = new SerializedObject(factory);
+                                var fso = new SerializedObject(objects[index]);
                                 fso.Update();
                         
                                 var fiter = fso.GetIterator();
@@ -68,8 +67,8 @@ namespace AutoEdge2Slice.Editor
                                 if (fscope.changed)
                                 {
                                     fso.ApplyModifiedProperties();
-                                    (factory as IOutlineGeneratorFactory).Save();
                                 }
+                                (objects[index] as IOutlineGeneratorFactory).Save();
                             }
                         }
 

@@ -1,6 +1,9 @@
+using System;
 using System.Linq;
+using PlasticGui.Gluon.WorkspaceWindow.Views.IncomingChanges;
 using UnityEditor;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace AutoEdge2Slice.Editor
 {
@@ -16,15 +19,34 @@ namespace AutoEdge2Slice.Editor
         [SerializeField]
         private int _maxTextureSize = 16384;
 
-        [Space(1), SerializeField] private Object _outlineGeneratorFactory;
+        [SerializeField]
+        private string _outlineGeneratorFactoryType;
+        private Object _outlineGeneratorFactory;
 
         public TextureImporterCompression TextureImporterCompression => _textureImporterCompression;
         public FilterMode FilterMode => _filterMode;
         public float PixelPerUnit => _pixelPerUnit;
         public int MaxTextureSize => _maxTextureSize;
-        public IOutlineGeneratorFactory OutlineGeneratorFactory => _outlineGeneratorFactory as IOutlineGeneratorFactory;
-
-        private TypeCache.TypeCollection _typeCollection;
+        public IOutlineGeneratorFactory OutlineGeneratorFactory
+        {
+            get
+            {
+                if (_outlineGeneratorFactory == null)
+                {
+                    var methodCollection = TypeCache.GetMethodsWithAttribute(typeof(OutlineGeneratorFactoryMethodAttribute));
+                    foreach (var method in methodCollection)
+                    {
+                        var obj = method.Invoke(null, null) as Object;
+                        if (obj.GetType().Name == _outlineGeneratorFactoryType)
+                        {
+                            _outlineGeneratorFactory = obj;
+                            break;
+                        }
+                    }
+                }
+                return _outlineGeneratorFactory as IOutlineGeneratorFactory;
+            }
+        }
         private void OnEnable()
         {
             hideFlags &= ~HideFlags.NotEditable;
