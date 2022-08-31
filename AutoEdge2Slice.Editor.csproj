@@ -54,16 +54,17 @@
   <ItemGroup>
      <Compile Include="Assets\AutoEdge2Slice\Editor\SpriteSettings.cs" />
      <Compile Include="Assets\AutoEdge2Slice\Editor\IOutlineGenerator.cs" />
-     <Compile Include="Assets\AutoEdge2Slice\Editor\BaseOutlineGeneratorFactory.cs" />
-     <Compile Include="Assets\AutoEdge2Slice\Editor\SpriteSettingsEditor.cs" />
+     <Compile Include="Assets\AutoEdge2Slice\Editor\IOutlineGeneratorFactory.cs" />
      <Compile Include="Assets\AutoEdge2Slice\Editor\AnimationClipGenerator.cs" />
      <Compile Include="Assets\AutoEdge2Slice\Editor\NullOutlineGeneratorFactory.cs" />
      <Compile Include="Assets\AutoEdge2Slice\Editor\SpriteSettingsWriter.cs" />
      <Compile Include="Assets\AutoEdge2Slice\Editor\AnimationClipDataProvider.cs" />
+     <Compile Include="Assets\AutoEdge2Slice\Editor\OutlineGeneratorFactoryMethodAttribute.cs" />
      <Compile Include="Assets\AutoEdge2Slice\Editor\EnumerableExtensions.cs" />
      <Compile Include="Assets\AutoEdge2Slice\Editor\PageShapeProvider.cs" />
      <Compile Include="Assets\AutoEdge2Slice\Editor\SpriteDivider.cs" />
      <Compile Include="Assets\AutoEdge2Slice\Editor\SpriteAssetImporter.cs" />
+     <Compile Include="Assets\AutoEdge2Slice\Editor\OutlineGeneratorFactorySearcher.cs" />
      <Compile Include="Assets\AutoEdge2Slice\Editor\EdgePageDataPostProcessor.cs" />
      <Compile Include="Assets\AutoEdge2Slice\Editor\DelayUnitSettingsConverter.cs" />
      <Compile Include="Assets\AutoEdge2Slice\Editor\SplitSpriteOutlineWindow.cs" />

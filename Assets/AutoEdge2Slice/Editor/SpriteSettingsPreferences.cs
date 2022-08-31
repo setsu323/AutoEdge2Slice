@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
@@ -6,60 +7,81 @@ namespace AutoEdge2Slice.Editor
 {
     public class SpriteSettingsPreferences
     {
-
-        internal static SpriteSettings spriteSettings
-        {
-            get
-            {
-                if (_spriteSettings == null)
-                    _spriteSettings = Resources.Load("SpriteSettings") as SpriteSettings;
-                return _spriteSettings;
-            }
-        }
-        private static SpriteSettings _spriteSettings;
-        
         [SettingsProvider]
         public static SettingsProvider CreateExampleProvider()
         {
-            var provider = new SettingsProvider("SpriteSettings/", SettingsScope.User)
+            var provider = new SettingsProvider("2D/", SettingsScope.Project)
             {
                 // タイトル
-                label = "Example",
+                label = "AutoEdge2Slice",
                 // GUI描画
                 guiHandler = searchContext =>
                 {
                     using (var scope = new EditorGUI.ChangeCheckScope())
                     {
-                        var so = new SerializedObject(spriteSettings);
+                        var so = new SerializedObject(SpriteSettings.instance);
                         so.Update();
+
 
                         var iter = so.GetIterator();
                         iter.NextVisible(true);
                         while (iter.NextVisible(false))
                         {
+                            if (iter.name == "_outlineGeneratorFactory")
+                            {
+                                continue;
+                            }
                             EditorGUILayout.PropertyField(iter, true);
                         }
+
+                        var factoryProp = so.FindProperty("_outlineGeneratorFactory");
+                        var factory = factoryProp
+                            .objectReferenceValue;
                         
-                        var factory = so.FindProperty("_outlineGeneratorFactory").objectReferenceValue as BaseOutlineGeneratorFactory;
-                        var fso = new SerializedObject(factory);
-                        fso.Update();
-                        
-                        var fiter = fso.GetIterator();
-                        fiter.NextVisible(true);
-                        while (fiter.NextVisible(false))
+                        var methods = TypeCache.GetMethodsWithAttribute<OutlineGeneratorFactoryMethodAttribute>();
+                        var objects = methods.Select(m => m.Invoke(null, null) as Object).ToList();
+                        var index = objects.FindIndex(s => s == factory);
+
+                        index = EditorGUILayout.Popup("_factories", index,
+                            objects.Select(s => s.GetType().Name).ToArray());
+
+                        if (index != -1)
                         {
-                            EditorGUILayout.PropertyField(fiter, true);
+                            factoryProp.objectReferenceValue = objects[index];
                         }
+
+
+                        if (factory != null)
+                        {
+                            using (var fscope = new EditorGUI.ChangeCheckScope())
+                            {
+                                var fso = new SerializedObject(factory);
+                                fso.Update();
                         
+                                var fiter = fso.GetIterator();
+                                fiter.NextVisible(true);
+                                while (fiter.NextVisible(false))
+                                {
+                                    EditorGUILayout.PropertyField(fiter, true);
+                                }
+                        
+                                if (fscope.changed)
+                                {
+                                    fso.ApplyModifiedProperties();
+                                    (factory as IOutlineGeneratorFactory).Save();
+                                }
+                            }
+                        }
+
                         if (scope.changed)
                         {
                             so.ApplyModifiedProperties();
-                            fso.ApplyModifiedProperties();
+                            SpriteSettings.instance.Save();
                         }
                     }
                 },
                 // 検索時のキーワード
-                keywords = new HashSet<string>(new[] { "Example" })
+                keywords = new HashSet<string>(new[] { "AutoEdge2Slice","Edge2","Sprite" })
             };
 
             return provider;

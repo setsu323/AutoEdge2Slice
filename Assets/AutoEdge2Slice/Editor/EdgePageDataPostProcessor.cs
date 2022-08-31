@@ -70,7 +70,7 @@ namespace AutoEdge2Slice.Editor
             var guid = AssetDatabase.AssetPathToGUID(pageDataPath);
             if (guid != "")
             {
-                var spriteSettings = SpriteSettings.GetOrCreate();
+                var spriteSettings = SpriteSettings.instance;
                 var spriteSettingWriter = new SpriteSettingsWriter(textureImporter,
                     spriteSettings.TextureImporterCompression, spriteSettings.FilterMode, spriteSettings.PixelPerUnit, spriteSettings.MaxTextureSize);
                 spriteSettingWriter.WriteSpriteSetting();

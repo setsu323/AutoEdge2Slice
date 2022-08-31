@@ -1,9 +1,11 @@
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
 namespace AutoEdge2Slice.Editor
 {
-    internal class SpriteSettings : ScriptableObject
+    [FilePath("ProjectSettings/SpriteSettings.asset", FilePathAttribute.Location.ProjectFolder)]
+    internal class SpriteSettings : ScriptableSingleton<SpriteSettings>
     {
         [SerializeField]
         private TextureImporterCompression _textureImporterCompression = TextureImporterCompression.Uncompressed;
@@ -14,27 +16,23 @@ namespace AutoEdge2Slice.Editor
         [SerializeField]
         private int _maxTextureSize = 16384;
 
-        [Space(1), SerializeField] private BaseOutlineGeneratorFactory _outlineGeneratorFactory;
+        [Space(1), SerializeField] private Object _outlineGeneratorFactory;
 
         public TextureImporterCompression TextureImporterCompression => _textureImporterCompression;
         public FilterMode FilterMode => _filterMode;
         public float PixelPerUnit => _pixelPerUnit;
         public int MaxTextureSize => _maxTextureSize;
-        public BaseOutlineGeneratorFactory OutlineGeneratorFactory => _outlineGeneratorFactory;
+        public IOutlineGeneratorFactory OutlineGeneratorFactory => _outlineGeneratorFactory as IOutlineGeneratorFactory;
 
-        internal static SpriteSettings GetOrCreate()
+        private TypeCache.TypeCollection _typeCollection;
+        private void OnEnable()
         {
-            //var path = "Assets/AutoEdge2Slice/Editor/SpriteSettings.asset";
-            //var settings = AssetDatabase.LoadAssetAtPath<SpriteSettings>(path);
-            var settings = Resources.Load("SpriteSettings") as SpriteSettings;
-            return settings;
-            
-            // if (settings != null) return settings;
-            //
-            // settings = CreateInstance<SpriteSettings>();
-            // AssetDatabase.CreateAsset(settings,path);
-            // AssetDatabase.SaveAssets();
-            // return settings;
-        } 
+            hideFlags &= ~HideFlags.NotEditable;
+        }
+
+        public void Save()
+        {
+            Save(true);
+        }
     }
 }

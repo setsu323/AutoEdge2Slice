@@ -27,10 +27,9 @@ namespace AutoEdge2Slice.Editor
             AssetDatabase.ImportAsset(GetTextureTargetPath(path));
         }
 
-        internal static BaseOutlineGeneratorFactory GetOutlineGeneratorFactory()
+        internal static IOutlineGeneratorFactory GetOutlineGeneratorFactory()
         {
-            var settings = Resources.Load("SpriteSettings") as SpriteSettings;
-            return settings.OutlineGeneratorFactory;
+            return SpriteSettings.instance.OutlineGeneratorFactory;
         }
         internal static ISpriteEditorDataProvider GetSpriteEditorDataProvider(Texture2D texture2D)
         {
