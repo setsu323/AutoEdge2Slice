@@ -24,15 +24,17 @@ namespace AutoEdge2Slice.Editor
 
         internal static SpriteSettings GetOrCreate()
         {
-            var path = "Assets/AutoEdge2Slice/Editor/SpriteSettings.asset";
-            var settings = AssetDatabase.LoadAssetAtPath<SpriteSettings>(path);
-
-            if (settings != null) return settings;
-
-            settings = CreateInstance<SpriteSettings>();
-            AssetDatabase.CreateAsset(settings,path);
-            AssetDatabase.SaveAssets();
+            //var path = "Assets/AutoEdge2Slice/Editor/SpriteSettings.asset";
+            //var settings = AssetDatabase.LoadAssetAtPath<SpriteSettings>(path);
+            var settings = Resources.Load("SpriteSettings") as SpriteSettings;
             return settings;
+            
+            // if (settings != null) return settings;
+            //
+            // settings = CreateInstance<SpriteSettings>();
+            // AssetDatabase.CreateAsset(settings,path);
+            // AssetDatabase.SaveAssets();
+            // return settings;
         } 
     }
 }
