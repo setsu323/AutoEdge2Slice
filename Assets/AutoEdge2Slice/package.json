@@ -9,6 +9,6 @@
     "url": "https://twitter.com/revertan3"
   },
   "dependencies": {
-    "com.unity.2d.sprite": "^0.0.1-security"
+    "com.unity.2d.sprite": "1.0.0"
   }
 }
