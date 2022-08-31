@@ -75,8 +75,8 @@ namespace AutoEdge2Slice.Editor
                         if (scope.changed)
                         {
                             so.ApplyModifiedProperties();
-                            SpriteSettings.instance.Save();
                         }
+                        SpriteSettings.instance.Save();
                     }
                 },
                 // 検索時のキーワード
