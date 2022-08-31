@@ -1,6 +1,3 @@
-using System;
-using System.Linq;
-using PlasticGui.Gluon.WorkspaceWindow.Views.IncomingChanges;
 using UnityEditor;
 using UnityEngine;
 using Object = UnityEngine.Object;
