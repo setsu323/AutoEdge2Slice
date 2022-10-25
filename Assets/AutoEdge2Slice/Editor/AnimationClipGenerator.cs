@@ -46,9 +46,7 @@ namespace AutoEdge2Slice.Editor
                 return delayString == null ? 0f : float.Parse(delayString)/unit;
             }).Append(0).PreScan(0f, (s, r) => s + r);
             
-            var keys = enumerable.Append(enumerable.Last()).Zip(times, (s, t) => new ObjectReferenceKeyframe() { time = t, value = s });
-            Debug.Log("");
-            return keys;
+            return enumerable.Append(enumerable.Last()).Zip(times, (s, t) => new ObjectReferenceKeyframe() { time = t, value = s });
         }
     }
 }
