@@ -31,6 +31,7 @@ namespace AutoEdge2Slice.Editor
 
         private static IEnumerable<ObjectReferenceKeyframe> GetAnimationData(XDocument document,IEnumerable<Sprite> targetSprites)
         {
+            var enumerable = targetSprites as Sprite[] ?? targetSprites.ToArray();
             var root = document.Root;
             var pages = root?.Elements("Page");
             if (pages == null) throw new NullReferenceException("XMLファイルにPageが存在しません");
@@ -45,7 +46,9 @@ namespace AutoEdge2Slice.Editor
                 return delayString == null ? 0f : float.Parse(delayString)/unit;
             }).Append(0).PreScan(0f, (s, r) => s + r);
             
-            return targetSprites.Append(targetSprites.Last()).Zip(times, (s, t) => new ObjectReferenceKeyframe() { time = t, value = s });
+            var keys = enumerable.Append(enumerable.Last()).Zip(times, (s, t) => new ObjectReferenceKeyframe() { time = t, value = s });
+            Debug.Log("");
+            return keys;
         }
     }
 }
