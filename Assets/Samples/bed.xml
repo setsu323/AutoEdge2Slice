@@ -4,82 +4,34 @@
 	<Coordinate>0</Coordinate>
 	<DelayUnit>0</DelayUnit>
 	<Page>
-		<Name>ベッド膨らみ</Name>
+		<Name>捕まりパイズリ</Name>
 		<ExportRect>0,0,64,83</ExportRect>
 		<DestPos>0,-83</DestPos>
-		<Delay>20</Delay>
-		<Transparent>1</Transparent>
-		<AfterMode>2</AfterMode>
-	</Page>
-	<Page>
-		<Name>ベッド膨らみ</Name>
-		<ExportRect>64,0,64,83</ExportRect>
-		<DestPos>0,-83</DestPos>
-		<Delay>20</Delay>
-		<Transparent>1</Transparent>
-		<AfterMode>2</AfterMode>
-	</Page>
-	<Page>
-		<Name>ベッド膨らみ</Name>
-		<ExportRect>128,0,64,83</ExportRect>
-		<DestPos>0,-83</DestPos>
-		<Delay>20</Delay>
-		<Transparent>1</Transparent>
-		<AfterMode>2</AfterMode>
-	</Page>
-	<Page>
-		<Name>ベッド膨らみ</Name>
-		<ExportRect>192,0,64,83</ExportRect>
-		<DestPos>0,-83</DestPos>
-		<Delay>20</Delay>
-		<Transparent>1</Transparent>
-		<AfterMode>2</AfterMode>
-	</Page>
-	<Page>
-		<Name>ベッド膨らみ</Name>
-		<ExportRect>256,0,64,83</ExportRect>
-		<DestPos>0,-83</DestPos>
-		<Delay>40</Delay>
-		<Transparent>1</Transparent>
-		<AfterMode>2</AfterMode>
-	</Page>
-	<Page>
-		<Name>ベッド膨らみ</Name>
-		<ExportRect>320,0,64,83</ExportRect>
-		<DestPos>0,-83</DestPos>
 		<Delay>10</Delay>
 		<Transparent>1</Transparent>
 		<AfterMode>2</AfterMode>
 	</Page>
 	<Page>
-		<Name>ベッド膨らみ</Name>
-		<ExportRect>384,0,64,83</ExportRect>
-		<DestPos>0,-83</DestPos>
-		<Delay>10</Delay>
-		<Transparent>1</Transparent>
-		<AfterMode>2</AfterMode>
-	</Page>
-	<Page>
-		<Name>ベッド膨らみ</Name>
-		<ExportRect>448,0,64,83</ExportRect>
-		<DestPos>0,-83</DestPos>
-		<Delay>10</Delay>
-		<Transparent>1</Transparent>
-		<AfterMode>2</AfterMode>
-	</Page>
-	<Page>
-		<Name>ベッド膨らみ</Name>
-		<ExportRect>512,0,64,83</ExportRect>
-		<DestPos>0,-83</DestPos>
-		<Delay>20</Delay>
-		<Transparent>1</Transparent>
-		<AfterMode>2</AfterMode>
-	</Page>
-	<Page>
-		<Name>ベッド膨らみ</Name>
+		<Name>追加フレ</Name>
 		<ExportRect>0,83,64,83</ExportRect>
 		<DestPos>0,-83</DestPos>
-		<Delay>90</Delay>
+		<Delay>10</Delay>
+		<Transparent>1</Transparent>
+		<AfterMode>2</AfterMode>
+	</Page>
+	<Page>
+		<Name>追加フレ</Name>
+		<ExportRect>0,166,64,83</ExportRect>
+		<DestPos>0,-83</DestPos>
+		<Delay>10</Delay>
+		<Transparent>1</Transparent>
+		<AfterMode>2</AfterMode>
+	</Page>
+	<Page>
+		<Name>追加フレ</Name>
+		<ExportRect>0,249,64,83</ExportRect>
+		<DestPos>0,-83</DestPos>
+		<Delay>10</Delay>
 		<Transparent>1</Transparent>
 		<AfterMode>2</AfterMode>
 	</Page>

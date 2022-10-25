@@ -36,8 +36,7 @@ namespace AutoEdge2Slice.Editor
             for (var i = 0; i < rects.Length; i++)
             {
                 var spriteRect = spriteRects[i] ?? new SpriteRect();
-                var targetRect =
-                    spriteRect.rect = ShrinkSpriteRect(rects[i]);
+                spriteRect.rect = ShrinkSpriteRect(rects[i]);
                 spriteRect.pivot = ConvertPivot(rects[i], pivots[i], spriteRect.rect);
             
                 spriteRect.alignment = SpriteAlignment.Custom;
