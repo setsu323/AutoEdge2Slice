@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
@@ -73,7 +74,8 @@ namespace AutoOutlineGenerator.SpriteExtension
         }
         private static void SplitRectVertically(Rect rect, float length,out Rect upperRect,out Rect lowerRect)
         {
-            var splitPoint = Mathf.Lerp(rect.yMin, rect.yMax, length);
+            var splitPoint = (int)Math.Round(Mathf.Lerp(rect.yMin, rect.yMax, length));
+
             upperRect = Rect.MinMaxRect(rect.xMin, rect.yMin, rect.xMax, splitPoint);
             lowerRect = Rect.MinMaxRect(rect.xMin, splitPoint, rect.xMax, rect.yMax);
         }

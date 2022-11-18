@@ -16,4 +16,4 @@ MonoBehaviour:
   _filterMode: 0
   _pixelPerUnit: 64
   _maxTextureSize: 16384
-  _outlineGeneratorFactoryType: OutlineGeneratorFactory
+  _outlineGeneratorFactoryType: VerticalSplitOutlineGeneratorFactory
