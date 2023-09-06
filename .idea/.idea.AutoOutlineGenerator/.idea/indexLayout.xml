@@ -2,11 +2,7 @@
 <project version="4">
   <component name="UserContentModel">
     <attachedFolders />
-    <explicitIncludes>
-      <Path>Assets/AutoOutlineGenerator/2DAnimationExtension/2DAnimationExtension.asmref</Path>
-    </explicitIncludes>
-    <explicitExcludes>
-      <Path>Library/PackageCache/com.unity.2d.animation@5.0.7</Path>
-    </explicitExcludes>
+    <explicitIncludes />
+    <explicitExcludes />
   </component>
 </project>

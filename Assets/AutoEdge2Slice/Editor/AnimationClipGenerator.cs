@@ -24,6 +24,12 @@ namespace AutoEdge2Slice.Editor
         {
             var objectReferenceKeyframes = GetAnimationData(document, sprites).ToArray();
             
+            //最後のフレームの時間のまま登録すると、アニメーション全体の長さが
+            //Edge上での長さ + 1フレーム
+            //になるので、先に1フレーム分だけ値を引いておく。
+            var frameTime = 1 / clip.frameRate;
+            objectReferenceKeyframes[objectReferenceKeyframes.Length - 1].time -= frameTime;
+
             var editorCurveBinding = EditorCurveBinding.PPtrCurve("", typeof(SpriteRenderer), "m_Sprite");
             AnimationUtility.SetObjectReferenceCurve(clip, editorCurveBinding, objectReferenceKeyframes);
             return clip;
@@ -36,9 +42,6 @@ namespace AutoEdge2Slice.Editor
             var pages = root?.Elements("Page");
             if (pages == null) throw new NullReferenceException("XMLファイルにPageが存在しません");
             var unit = DelayUnitSettingsConverter.ToUnit(document);
-            
-            
-            var delayUnit = root?.Element("DelayUnit")?.Value;
 
             var times = pages.Select(x =>
             {
@@ -46,6 +49,7 @@ namespace AutoEdge2Slice.Editor
                 return delayString == null ? 0f : float.Parse(delayString)/unit;
             }).Append(0).PreScan(0f, (s, r) => s + r);
             
+            //ObjectReferenceKeyframeの最後が1フレーム多くなってしまう……
             return enumerable.Append(enumerable[times.Count()-2]).Zip(times, (s, t) => new ObjectReferenceKeyframe() { time = t, value = s });
         }
     }
