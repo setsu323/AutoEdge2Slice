@@ -1,0 +1,737 @@
+fileFormatVersion: 2
+guid: 44a4a742f11a4944fa200c262f965979
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7948119084001329016
+    second: Swimsuit2Succubus_0
+  - first:
+      213: -6579702511530352992
+    second: Swimsuit2Succubus_1
+  - first:
+      213: -9069516981247512307
+    second: Swimsuit2Succubus_2
+  - first:
+      213: -5664558641649178914
+    second: Swimsuit2Succubus_3
+  - first:
+      213: -6698002856639705082
+    second: Swimsuit2Succubus_4
+  - first:
+      213: -5559786585068910438
+    second: Swimsuit2Succubus_5
+  - first:
+      213: -8255874323162981480
+    second: Swimsuit2Succubus_6
+  - first:
+      213: -4476226010002690566
+    second: Swimsuit2Succubus_7
+  - first:
+      213: 4915942534260818438
+    second: Swimsuit2Succubus_8
+  - first:
+      213: -7169435424477470813
+    second: Swimsuit2Succubus_9
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Swimsuit2Succubus_9
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 1
+        width: 47
+        height: 59
+      alignment: 9
+      pivot: {x: 0.4893617, y: 0.050847452}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f54eee34d0bc48043a4b9070f7012c99
+      internalID: -7169435424477470813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swimsuit2Succubus_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 61
+        width: 47
+        height: 59
+      alignment: 9
+      pivot: {x: 0.4893617, y: 0.050847456}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19.5, y: -26.5}
+        - {x: -18.5, y: -29.5}
+        - {x: 6.5, y: -29.5}
+        - {x: 8.5, y: -27.5}
+        - {x: 8.5, y: -26.5}
+      - - {x: 14.5, y: -21.5}
+        - {x: 17.5, y: -21.5}
+        - {x: 21.5, y: -18.5}
+        - {x: 23.5, y: -17.5}
+        - {x: 23.5, y: -11.5}
+        - {x: 21.5, y: -9.5}
+        - {x: 21.5, y: -8.5}
+        - {x: 23.5, y: -6.5}
+        - {x: 23.5, y: -3.5}
+        - {x: 20.5, y: 3.5}
+        - {x: 17.5, y: 5.5}
+        - {x: 17.5, y: 7.5}
+        - {x: 19.5, y: 8.5}
+        - {x: 21.5, y: 13.5}
+        - {x: 21.5, y: 21.5}
+        - {x: 19.5, y: 26.5}
+        - {x: 15.5, y: 29.5}
+        - {x: -1.5, y: 29.5}
+        - {x: -4.5, y: 26.5}
+        - {x: -6.5, y: 21.5}
+        - {x: -6.5, y: 14.5}
+        - {x: -3.5, y: 10.5}
+        - {x: -3.5, y: 7.5}
+        - {x: -0.5, y: 4.5}
+        - {x: 0.5, y: 4.5}
+        - {x: 2.5, y: 2.5}
+        - {x: 1.5, y: 1.5}
+        - {x: 1.5, y: -1.5}
+        - {x: 0.5, y: -3.5}
+        - {x: -0.5, y: -3.5}
+        - {x: -4.5, y: -0.5}
+        - {x: -12.5, y: -0.5}
+        - {x: -17.5, y: -2.5}
+        - {x: -23.5, y: -8.5}
+        - {x: -23.5, y: -21.5}
+        - {x: -22.5, y: -24.5}
+        - {x: -19.5, y: -26.5}
+        - {x: 8.5, y: -26.5}
+        - {x: 7.5, y: -22.5}
+        - {x: 8.5, y: -23.5}
+        - {x: 12.5, y: -23.5}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cf720e27d58bfd4eb2127ecc9287a48
+      internalID: -7948119084001329016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swimsuit2Succubus_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 61
+        width: 47
+        height: 55
+      alignment: 9
+      pivot: {x: 0.4893617, y: 0.054545455}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19.5, y: -24.5}
+        - {x: -18.5, y: -27.5}
+        - {x: 6.5, y: -27.5}
+        - {x: 8.5, y: -25.5}
+        - {x: 8.5, y: -24.5}
+      - - {x: 13.5, y: -19.5}
+        - {x: 17.5, y: -19.5}
+        - {x: 21.5, y: -16.5}
+        - {x: 23.5, y: -15.5}
+        - {x: 23.5, y: -9.5}
+        - {x: 22.5, y: -7.5}
+        - {x: 20.5, y: -7.5}
+        - {x: 22.5, y: -5.5}
+        - {x: 22.5, y: -1.5}
+        - {x: 14.5, y: 6.5}
+        - {x: 17.5, y: 12.5}
+        - {x: 17.5, y: 21.5}
+        - {x: 16.5, y: 24.5}
+        - {x: 13.5, y: 27.5}
+        - {x: -3.5, y: 27.5}
+        - {x: -8.5, y: 23.5}
+        - {x: -9.5, y: 20.5}
+        - {x: -9.5, y: 10.5}
+        - {x: -8.5, y: 7.5}
+        - {x: -3.5, y: 2.5}
+        - {x: -2.5, y: 0.5}
+        - {x: -0.5, y: 0.5}
+        - {x: 0.5, y: -0.5}
+        - {x: -0.5, y: -1.5}
+        - {x: -4.5, y: 1.5}
+        - {x: -12.5, y: 1.5}
+        - {x: -17.5, y: -0.5}
+        - {x: -23.5, y: -6.5}
+        - {x: -23.5, y: -19.5}
+        - {x: -22.5, y: -22.5}
+        - {x: -19.5, y: -24.5}
+        - {x: 8.5, y: -24.5}
+        - {x: 7.5, y: -20.5}
+        - {x: 8.5, y: -21.5}
+        - {x: 11.5, y: -21.5}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e6fb0a46935b9344a5472cca8f93b8a
+      internalID: -6579702511530352992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swimsuit2Succubus_2
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 61
+        width: 47
+        height: 57
+      alignment: 9
+      pivot: {x: 0.4893617, y: 0.05263158}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20.5, y: -25.5}
+        - {x: -20.5, y: -26.5}
+        - {x: -18.5, y: -28.5}
+        - {x: 7.5, y: -28.5}
+        - {x: 9.5, y: -26.5}
+        - {x: 9.5, y: -25.5}
+      - - {x: 14.5, y: -20.5}
+        - {x: 17.5, y: -20.5}
+        - {x: 21.5, y: -17.5}
+        - {x: 23.5, y: -16.5}
+        - {x: 23.5, y: -9.5}
+        - {x: 19.5, y: -8.5}
+        - {x: 20.5, y: -2.5}
+        - {x: 19.5, y: 0.5}
+        - {x: 12.5, y: 6.5}
+        - {x: 13.5, y: 7.5}
+        - {x: 14.5, y: 13.5}
+        - {x: 15.5, y: 14.5}
+        - {x: 15.5, y: 21.5}
+        - {x: 14.5, y: 24.5}
+        - {x: 9.5, y: 28.5}
+        - {x: -5.5, y: 28.5}
+        - {x: -10.5, y: 24.5}
+        - {x: -11.5, y: 21.5}
+        - {x: -11.5, y: 9.5}
+        - {x: -3.5, y: 1.5}
+        - {x: -1.5, y: 1.5}
+        - {x: -1.5, y: -2.5}
+        - {x: -4.5, y: -0.5}
+        - {x: -12.5, y: -0.5}
+        - {x: -17.5, y: -2.5}
+        - {x: -23.5, y: -8.5}
+        - {x: -23.5, y: -22.5}
+        - {x: -20.5, y: -25.5}
+        - {x: 9.5, y: -25.5}
+        - {x: 7.5, y: -21.5}
+        - {x: 8.5, y: -22.5}
+        - {x: 11.5, y: -22.5}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ff0debdd8084aa4ca679bf309564a7e
+      internalID: -9069516981247512307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swimsuit2Succubus_3
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 61
+        width: 47
+        height: 59
+      alignment: 9
+      pivot: {x: 0.4893617, y: 0.050847456}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19.5, y: -26.5}
+        - {x: -19.5, y: -29.5}
+        - {x: 8.5, y: -29.5}
+        - {x: 8.5, y: -26.5}
+      - - {x: 14.5, y: -21.5}
+        - {x: 16.5, y: -21.5}
+        - {x: 20.5, y: -18.5}
+        - {x: 23.5, y: -17.5}
+        - {x: 23.5, y: -11.5}
+        - {x: 20.5, y: -8.5}
+        - {x: 22.5, y: -6.5}
+        - {x: 22.5, y: -1.5}
+        - {x: 21.5, y: -0.5}
+        - {x: 20.5, y: 4.5}
+        - {x: 17.5, y: 7.5}
+        - {x: 17.5, y: 9.5}
+        - {x: 19.5, y: 13.5}
+        - {x: 19.5, y: 22.5}
+        - {x: 18.5, y: 25.5}
+        - {x: 13.5, y: 29.5}
+        - {x: -1.5, y: 29.5}
+        - {x: -6.5, y: 25.5}
+        - {x: -7.5, y: 22.5}
+        - {x: -7.5, y: 13.5}
+        - {x: -6.5, y: 10.5}
+        - {x: -3.5, y: 8.5}
+        - {x: -3.5, y: 6.5}
+        - {x: -1.5, y: 3.5}
+        - {x: 2.5, y: 2.5}
+        - {x: -0.5, y: 0.5}
+        - {x: 0.5, y: -3.5}
+        - {x: -0.5, y: -3.5}
+        - {x: -4.5, y: -0.5}
+        - {x: -12.5, y: -0.5}
+        - {x: -17.5, y: -2.5}
+        - {x: -23.5, y: -8.5}
+        - {x: -23.5, y: -22.5}
+        - {x: -19.5, y: -26.5}
+        - {x: 8.5, y: -26.5}
+        - {x: 7.5, y: -22.5}
+        - {x: 8.5, y: -23.5}
+        - {x: 12.5, y: -23.5}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 102bd3d80c94cac4382d2655d80c92eb
+      internalID: -5664558641649178914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swimsuit2Succubus_4
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 61
+        width: 48
+        height: 59
+      alignment: 9
+      pivot: {x: 0.47916666, y: 0.050847456}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20, y: -26.5}
+        - {x: -19, y: -29.5}
+        - {x: 6, y: -29.5}
+        - {x: 8, y: -27.5}
+        - {x: 8, y: -26.5}
+      - - {x: 14, y: -21.5}
+        - {x: 17, y: -21.5}
+        - {x: 21, y: -18.5}
+        - {x: 24, y: -16.5}
+        - {x: 24, y: -12.5}
+        - {x: 22, y: -9.5}
+        - {x: 20, y: -9.5}
+        - {x: 22, y: -7.5}
+        - {x: 22, y: -5.5}
+        - {x: 23, y: -4.5}
+        - {x: 24, y: 3.5}
+        - {x: 21, y: 6.5}
+        - {x: 24, y: 8.5}
+        - {x: 24, y: 26.5}
+        - {x: 21, y: 29.5}
+        - {x: 5, y: 29.5}
+        - {x: 0, y: 25.5}
+        - {x: -1, y: 22.5}
+        - {x: -1, y: 20.5}
+        - {x: -2, y: 19.5}
+        - {x: -2, y: 14.5}
+        - {x: 0, y: 12.5}
+        - {x: 0, y: 9.5}
+        - {x: 5, y: 4.5}
+        - {x: 4, y: 4.5}
+        - {x: 2, y: 6.5}
+        - {x: -2, y: 7.5}
+        - {x: -3, y: 6.5}
+        - {x: -5, y: 6.5}
+        - {x: -9, y: 10.5}
+        - {x: -11, y: 10.5}
+        - {x: -14, y: 7.5}
+        - {x: -14, y: 3.5}
+        - {x: -12, y: 2.5}
+        - {x: -9, y: 0.5}
+        - {x: -10, y: -0.5}
+        - {x: -13, y: -0.5}
+        - {x: -18, y: -2.5}
+        - {x: -24, y: -8.5}
+        - {x: -24, y: -21.5}
+        - {x: -23, y: -24.5}
+        - {x: -20, y: -26.5}
+        - {x: 8, y: -26.5}
+        - {x: 7, y: -22.5}
+        - {x: 8, y: -23.5}
+        - {x: 12, y: -23.5}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2b60ba3e992db3449873116a6b12a9e
+      internalID: -6698002856639705082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swimsuit2Succubus_5
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 61
+        width: 49
+        height: 59
+      alignment: 9
+      pivot: {x: 0.46938777, y: 0.050847456}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20.5, y: -26.5}
+        - {x: -19.5, y: -29.5}
+        - {x: 5.5, y: -29.5}
+        - {x: 7.5, y: -27.5}
+        - {x: 7.5, y: -26.5}
+      - - {x: 13.5, y: -21.5}
+        - {x: 16.5, y: -21.5}
+        - {x: 20.5, y: -18.5}
+        - {x: 24.5, y: -16.5}
+        - {x: 24.5, y: -13.5}
+        - {x: 21.5, y: -9.5}
+        - {x: 19.5, y: -9.5}
+        - {x: 21.5, y: -6.5}
+        - {x: 21.5, y: -3.5}
+        - {x: 23.5, y: -0.5}
+        - {x: 23.5, y: 3.5}
+        - {x: 21.5, y: 5.5}
+        - {x: 21.5, y: 6.5}
+        - {x: 22.5, y: 7.5}
+        - {x: 24.5, y: 10.5}
+        - {x: 24.5, y: 26.5}
+        - {x: 21.5, y: 29.5}
+        - {x: 5.5, y: 29.5}
+        - {x: 0.5, y: 25.5}
+        - {x: -1.5, y: 20.5}
+        - {x: -1.5, y: 13.5}
+        - {x: 0.5, y: 10.5}
+        - {x: 0.5, y: 7.5}
+        - {x: 2.5, y: 5.5}
+        - {x: 2.5, y: 3.5}
+        - {x: 0.5, y: 4.5}
+        - {x: -2.5, y: 4.5}
+        - {x: -3.5, y: 3.5}
+        - {x: -5.5, y: 3.5}
+        - {x: -7.5, y: 1.5}
+        - {x: -9.5, y: 3.5}
+        - {x: -10.5, y: 5.5}
+        - {x: -13.5, y: 5.5}
+        - {x: -16.5, y: 2.5}
+        - {x: -16.5, y: 0.5}
+        - {x: -14.5, y: -1.5}
+        - {x: -18.5, y: -2.5}
+        - {x: -24.5, y: -8.5}
+        - {x: -24.5, y: -21.5}
+        - {x: -23.5, y: -24.5}
+        - {x: -20.5, y: -26.5}
+        - {x: 7.5, y: -26.5}
+        - {x: 6.5, y: -22.5}
+        - {x: 7.5, y: -23.5}
+        - {x: 11.5, y: -23.5}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35b5916564da27d47bf3b2a5049847ce
+      internalID: -5559786585068910438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swimsuit2Succubus_6
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 1
+        width: 47
+        height: 59
+      alignment: 9
+      pivot: {x: 0.4893617, y: 0.050847452}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19.5, y: -26.5}
+        - {x: -18.5, y: -29.5}
+        - {x: 6.5, y: -29.5}
+        - {x: 8.5, y: -27.5}
+        - {x: 8.5, y: -26.5}
+      - - {x: 14.5, y: -21.5}
+        - {x: 17.5, y: -21.5}
+        - {x: 21.5, y: -18.5}
+        - {x: 23.5, y: -17.5}
+        - {x: 23.5, y: -11.5}
+        - {x: 22.5, y: -9.5}
+        - {x: 20.5, y: -9.5}
+        - {x: 22.5, y: -6.5}
+        - {x: 22.5, y: 2.5}
+        - {x: 19.5, y: 6.5}
+        - {x: 22.5, y: 8.5}
+        - {x: 23.5, y: 11.5}
+        - {x: 23.5, y: 26.5}
+        - {x: 19.5, y: 29.5}
+        - {x: 3.5, y: 29.5}
+        - {x: -1.5, y: 24.5}
+        - {x: -2.5, y: 20.5}
+        - {x: -3.5, y: 19.5}
+        - {x: -3.5, y: 14.5}
+        - {x: -0.5, y: 10.5}
+        - {x: -1.5, y: 9.5}
+        - {x: -1.5, y: 7.5}
+        - {x: -0.5, y: 5.5}
+        - {x: 3.5, y: 3.5}
+        - {x: 3.5, y: 2.5}
+        - {x: -1.5, y: -2.5}
+        - {x: -4.5, y: -0.5}
+        - {x: -12.5, y: -0.5}
+        - {x: -17.5, y: -2.5}
+        - {x: -23.5, y: -8.5}
+        - {x: -23.5, y: -21.5}
+        - {x: -22.5, y: -24.5}
+        - {x: -19.5, y: -26.5}
+        - {x: 8.5, y: -26.5}
+        - {x: 7.5, y: -22.5}
+        - {x: 8.5, y: -23.5}
+        - {x: 12.5, y: -23.5}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fac2777e90360664bbb96c5921755c40
+      internalID: -8255874323162981480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swimsuit2Succubus_7
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 1
+        width: 47
+        height: 59
+      alignment: 9
+      pivot: {x: 0.4893617, y: 0.050847452}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19.5, y: -26.5}
+        - {x: -18.5, y: -29.5}
+        - {x: 6.5, y: -29.5}
+        - {x: 8.5, y: -27.5}
+        - {x: 8.5, y: -26.5}
+      - - {x: 12.5, y: -23.5}
+        - {x: 14.5, y: -21.5}
+        - {x: 17.5, y: -21.5}
+        - {x: 21.5, y: -18.5}
+        - {x: 23.5, y: -17.5}
+        - {x: 23.5, y: -11.5}
+        - {x: 22.5, y: -9.5}
+        - {x: 20.5, y: -9.5}
+        - {x: 22.5, y: -6.5}
+        - {x: 22.5, y: -3.5}
+        - {x: 23.5, y: -2.5}
+        - {x: 23.5, y: 2.5}
+        - {x: 20.5, y: 6.5}
+        - {x: 23.5, y: 8.5}
+        - {x: 23.5, y: 26.5}
+        - {x: 20.5, y: 29.5}
+        - {x: 4.5, y: 29.5}
+        - {x: -0.5, y: 25.5}
+        - {x: -1.5, y: 22.5}
+        - {x: -1.5, y: 20.5}
+        - {x: -2.5, y: 19.5}
+        - {x: -2.5, y: 14.5}
+        - {x: -0.5, y: 11.5}
+        - {x: -0.5, y: 8.5}
+        - {x: 2.5, y: 5.5}
+        - {x: 3.5, y: 5.5}
+        - {x: 4.5, y: 4.5}
+        - {x: 4.5, y: 2.5}
+        - {x: 0.5, y: -1.5}
+        - {x: 0.5, y: -3.5}
+        - {x: -0.5, y: -3.5}
+        - {x: -4.5, y: -0.5}
+        - {x: -12.5, y: -0.5}
+        - {x: -17.5, y: -2.5}
+        - {x: -23.5, y: -8.5}
+        - {x: -23.5, y: -21.5}
+        - {x: -22.5, y: -24.5}
+        - {x: -19.5, y: -26.5}
+        - {x: 8.5, y: -26.5}
+        - {x: 7.5, y: -22.5}
+        - {x: 8.5, y: -23.5}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4b1bb86654fb6940b6a3281d164762d
+      internalID: -4476226010002690566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swimsuit2Succubus_8
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 1
+        width: 47
+        height: 59
+      alignment: 9
+      pivot: {x: 0.4893617, y: 0.050847452}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19.5, y: -26.5}
+        - {x: -18.5, y: -29.5}
+        - {x: 6.5, y: -29.5}
+        - {x: 8.5, y: -27.5}
+        - {x: 8.5, y: -26.5}
+      - - {x: 12.5, y: -23.5}
+        - {x: 14.5, y: -21.5}
+        - {x: 17.5, y: -21.5}
+        - {x: 21.5, y: -18.5}
+        - {x: 23.5, y: -17.5}
+        - {x: 23.5, y: -11.5}
+        - {x: 22.5, y: -9.5}
+        - {x: 20.5, y: -9.5}
+        - {x: 22.5, y: -6.5}
+        - {x: 22.5, y: -3.5}
+        - {x: 23.5, y: -2.5}
+        - {x: 23.5, y: 2.5}
+        - {x: 20.5, y: 6.5}
+        - {x: 23.5, y: 8.5}
+        - {x: 23.5, y: 26.5}
+        - {x: 20.5, y: 29.5}
+        - {x: 4.5, y: 29.5}
+        - {x: -0.5, y: 25.5}
+        - {x: -1.5, y: 22.5}
+        - {x: -1.5, y: 20.5}
+        - {x: -2.5, y: 19.5}
+        - {x: -2.5, y: 14.5}
+        - {x: -0.5, y: 11.5}
+        - {x: -0.5, y: 8.5}
+        - {x: 2.5, y: 5.5}
+        - {x: 3.5, y: 5.5}
+        - {x: 4.5, y: 4.5}
+        - {x: 4.5, y: 2.5}
+        - {x: 0.5, y: -1.5}
+        - {x: 0.5, y: -3.5}
+        - {x: -0.5, y: -3.5}
+        - {x: -4.5, y: -0.5}
+        - {x: -12.5, y: -0.5}
+        - {x: -17.5, y: -2.5}
+        - {x: -23.5, y: -8.5}
+        - {x: -23.5, y: -21.5}
+        - {x: -22.5, y: -24.5}
+        - {x: -19.5, y: -26.5}
+        - {x: 8.5, y: -26.5}
+        - {x: 7.5, y: -22.5}
+        - {x: 8.5, y: -23.5}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2f660ad53000cc418747c6a8fad1483
+      internalID: 4915942534260818438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: c0d48768ac4c09b4aa8f19ff81efa10c
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

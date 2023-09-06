@@ -16,7 +16,7 @@ namespace AutoEdge2Slice.Editor
             //xmlPathから取得する
             var textAsset = AssetDatabase.LoadAssetAtPath<TextAsset>(xmlPath);
             document = XDocument.Parse(textAsset.text);
-            return document.Root?.Name == "ExportedPages";
+            return document.Root?.Name == EdgePageDataPostProcessor.ExportedMark;
         }
 
         internal bool TryGetSprites(string xmlPath,out Sprite[] sprites)
