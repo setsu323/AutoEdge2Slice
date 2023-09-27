@@ -37,7 +37,7 @@ namespace AutoEdge2Slice.Editor
 
         private static void CreateAnimations(List<string> paths)
         {
-            var count = paths.Count;
+            var count = paths.Count - 1;
             var autoOverride = false;
             foreach (var path in paths)
             {
@@ -55,7 +55,8 @@ namespace AutoEdge2Slice.Editor
             var clipPath = Path.ChangeExtension(path, "anim");
             var loadedClip = AssetDatabase.LoadAssetAtPath<AnimationClip>(clipPath);
             var animationClipGenerator = new AnimationClipGenerator();
-            
+            var useLoop = clipPath.Contains("Loop");
+
             if (loadedClip != null)
             {
                 var result = 0;
@@ -68,7 +69,7 @@ namespace AutoEdge2Slice.Editor
                     result = EditorUtility.DisplayDialogComplex(clipPath,
                         "既に同名のアニメーションクリップが存在します、上書きしますか？", "上書きする", "中止", "別ファイルとして保存");
 
-                    if (result == 0)
+                    if (result == 0 && rest > 0)
                     {
                         autoOverride = EditorUtility.DisplayDialog("残りクリップ数" + rest, "残りクリップも同様に上書きしますか？", "上書きする", "しない");
                     }
@@ -78,19 +79,19 @@ namespace AutoEdge2Slice.Editor
                 //上書きする場合
                 if (result == 0)
                 {
-                    animationClipGenerator.ModifyAnimationClip(loadedClip, sprites, document);
+                    animationClipGenerator.ModifyAnimationClip(loadedClip, sprites, document,useLoop);
                     AssetDatabase.ImportAsset(clipPath);
                 }
                 //別ファイルとして保存
                 else if (result == 2)
                 {
-                    var clip = animationClipGenerator.CreateAnimationClip(sprites, document);
+                    var clip = animationClipGenerator.CreateAnimationClip(sprites, document,useLoop);
                     AssetDatabase.CreateAsset(clip, AssetDatabase.GenerateUniqueAssetPath(clipPath));
                 }
             }
             else
             {
-                var clip = animationClipGenerator.CreateAnimationClip(sprites, document);
+                var clip = animationClipGenerator.CreateAnimationClip(sprites, document,useLoop);
                 AssetDatabase.CreateAsset(clip, clipPath);
             }
         }
