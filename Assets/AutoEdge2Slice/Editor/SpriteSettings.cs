@@ -18,6 +18,9 @@ namespace AutoEdge2Slice.Editor
 
         [SerializeField]
         private string _outlineGeneratorFactoryType;
+
+        [SerializeField] private bool _useSpriteAutoImport = true;
+        public bool UseSpriteAutoImport => _useSpriteAutoImport;
         private Object _outlineGeneratorFactory;
 
         public TextureImporterCompression TextureImporterCompression => _textureImporterCompression;

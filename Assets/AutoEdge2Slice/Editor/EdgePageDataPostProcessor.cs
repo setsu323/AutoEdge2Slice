@@ -12,6 +12,7 @@ namespace AutoEdge2Slice.Editor
         private static void OnPostprocessAllAssets(string[] importedAssets, string[] deletedAssets, string[] movedAssets,
             string[] movedFromAssetPaths)
         {
+            if (!SpriteSettings.instance.UseSpriteAutoImport) return;
             var shouldExportAnimations = new List<string>();
             foreach (var importedAssetPath in importedAssets)
             {
