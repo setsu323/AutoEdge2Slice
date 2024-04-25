@@ -24,6 +24,7 @@ namespace AutoEdge2Slice.SpriteFoldingExtension.Runtime
         private void LateUpdate()
         {
             var sprite = _spriteRenderer.sprite;
+            if (sprite == null) return;
             if (ModifiedSprites.Contains(sprite)) return;
             
             
