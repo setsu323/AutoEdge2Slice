@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Xml.Linq;
@@ -52,6 +53,7 @@ namespace AutoEdge2Slice.Editor
             var dataProvider = new AnimationClipDataProvider();
             if (!dataProvider.TryGetPageDocument(path, out var document)) return;
             if (!dataProvider.TryGetSprites(path, out var sprites)) return;
+            
 
             var clipPath = Path.ChangeExtension(path, "anim");
             var loadedClip = AssetDatabase.LoadAssetAtPath<AnimationClip>(clipPath);

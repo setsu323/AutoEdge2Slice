@@ -8,6 +8,12 @@ onBoardingDoNotAskAgain = true
 showPackageIndexes = false
 showStatusBar = false
 scopes = {
+	"last_search.110DEAE9" = "mainprof"
+	"OpenInspectorPreview.110DEAE9" = "0"
+	"currentGroup.110DEAE9" = "asset"
+	"last_search.E8DA159D" = "mainprof"
+	"OpenInspectorPreview.E8DA159D" = "0"
+	"currentGroup.E8DA159D" = "asset"
 }
 providers = {
 	packages = {
