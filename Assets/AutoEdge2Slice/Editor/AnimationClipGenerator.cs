@@ -20,7 +20,7 @@ namespace AutoEdge2Slice.Editor
             return ModifyAnimationClip(clip, sprites, document,loopTime);
         }
 
-        public AnimationClip ModifyAnimationClip(AnimationClip clip, Sprite[] sprites, XDocument document,bool loopTime)
+        public AnimationClip ModifyAnimationClip(AnimationClip clip, Sprite[] sprites, XDocument document,bool containsLoopName)
         {
             var objectReferenceKeyframes = GetAnimationData(document, sprites).ToArray();
             
@@ -33,7 +33,10 @@ namespace AutoEdge2Slice.Editor
             var editorCurveBinding = EditorCurveBinding.PPtrCurve("", typeof(SpriteRenderer), "m_Sprite");
             AnimationUtility.SetObjectReferenceCurve(clip, editorCurveBinding, objectReferenceKeyframes);
             var settings = AnimationUtility.GetAnimationClipSettings(clip);
-            settings.loopTime = loopTime;
+            if (containsLoopName)
+            {
+                settings.loopTime = true;
+            }
             AnimationUtility.SetAnimationClipSettings(clip, settings);
             return clip;
         }

@@ -58,7 +58,7 @@ namespace AutoEdge2Slice.Editor
             var clipPath = Path.ChangeExtension(path, "anim");
             var loadedClip = AssetDatabase.LoadAssetAtPath<AnimationClip>(clipPath);
             var animationClipGenerator = new AnimationClipGenerator();
-            var useLoop = clipPath.Contains("Loop");
+            var containsLoopName = clipPath.Contains("Loop");
 
             if (loadedClip != null)
             {
@@ -82,19 +82,19 @@ namespace AutoEdge2Slice.Editor
                 //上書きする場合
                 if (result == 0)
                 {
-                    animationClipGenerator.ModifyAnimationClip(loadedClip, sprites, document,useLoop);
+                    animationClipGenerator.ModifyAnimationClip(loadedClip, sprites, document, false);
                     AssetDatabase.ImportAsset(clipPath);
                 }
                 //別ファイルとして保存
                 else if (result == 2)
                 {
-                    var clip = animationClipGenerator.CreateAnimationClip(sprites, document,useLoop);
+                    var clip = animationClipGenerator.CreateAnimationClip(sprites, document,containsLoopName);
                     AssetDatabase.CreateAsset(clip, AssetDatabase.GenerateUniqueAssetPath(clipPath));
                 }
             }
             else
             {
-                var clip = animationClipGenerator.CreateAnimationClip(sprites, document,useLoop);
+                var clip = animationClipGenerator.CreateAnimationClip(sprites, document,containsLoopName);
                 AssetDatabase.CreateAsset(clip, clipPath);
             }
         }
