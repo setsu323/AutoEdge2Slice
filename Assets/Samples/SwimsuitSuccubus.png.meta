@@ -21,7 +21,7 @@ TextureImporter:
       213: -9000831013252481324
     second: SwimsuitSuccubus_5
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -38,10 +38,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -80,6 +82,8 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -91,6 +95,46 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -153,7 +197,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 61ba60eb100459e4ea73c75c5c26d33b
+      spriteID: cefbd2d9264b11743bc1c102c410a05a
       internalID: -3381376103682516447
       vertices: []
       indices: 
@@ -213,7 +257,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b072ac149446be64d8e243918c9344a7
+      spriteID: 9c85db6c6c5fcb346978c7805692c518
       internalID: -6545873630312769930
       vertices: []
       indices: 
@@ -277,7 +321,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1fecdc4d0bcfb2a41a3f33ecbaa0bd9a
+      spriteID: 02a84f2e72a397b4da97eeeed1400ca1
       internalID: 744237050782584394
       vertices: []
       indices: 
@@ -346,7 +390,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 079ad7843cbcea941b3a277d22650f45
+      spriteID: 778c8b7e14bd4f34d85f75bc2d1e8b73
       internalID: -3615591696314758087
       vertices: []
       indices: 
@@ -414,7 +458,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0797e8443d7ac4547823a7e7438bbded
+      spriteID: eb21122ad62413f43977e0ceed6a0999
       internalID: -8967663644490778622
       vertices: []
       indices: 
@@ -481,7 +525,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d0365aa93a9be6c4c80d5bd615837fea
+      spriteID: 2ad79b279b10b2c42a3ec3bad678a8d9
       internalID: -9000831013252481324
       vertices: []
       indices: 
@@ -497,9 +541,15 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-  spritePackingTag: 
+    nameFileIdTable:
+      SwimsuitSuccubus_0: -3381376103682516447
+      SwimsuitSuccubus_1: -6545873630312769930
+      SwimsuitSuccubus_2: 744237050782584394
+      SwimsuitSuccubus_3: -3615591696314758087
+      SwimsuitSuccubus_4: -8967663644490778622
+      SwimsuitSuccubus_5: -9000831013252481324
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
