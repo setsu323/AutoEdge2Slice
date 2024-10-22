@@ -33,6 +33,14 @@ namespace AutoEdge2Slice.Editor
 
             var editorCurveBinding = EditorCurveBinding.PPtrCurve("", targetType, propertyName);
             AnimationUtility.SetObjectReferenceCurve(clip, editorCurveBinding, objectReferenceKeyframes);
+            if(targetType == typeof(Image))
+            {
+                var colorCurveBinding = EditorCurveBinding.FloatCurve("", typeof(Image), "m_Color.a");
+                AnimationUtility.SetEditorCurve(clip, colorCurveBinding,
+                    new AnimationCurve(new Keyframe(0, 1)));
+            }
+            
+            
             var settings = AnimationUtility.GetAnimationClipSettings(clip);
             if (containsLoopName)
             {
