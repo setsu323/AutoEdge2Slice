@@ -4,6 +4,7 @@ using System.Linq;
 using System.Xml.Linq;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace AutoEdge2Slice.Editor
 {
@@ -14,13 +15,13 @@ namespace AutoEdge2Slice.Editor
         /// ただしアセット化は行わない。
         /// </summary>
         /// <returns></returns>
-        public AnimationClip CreateAnimationClip(Sprite[] sprites,XDocument document,bool loopTime)
+        public AnimationClip CreateAnimationClip(Sprite[] sprites,XDocument document,bool loopTime,Type targetType,string propertyName)
         {
             var clip = new AnimationClip();
-            return ModifyAnimationClip(clip, sprites, document,loopTime);
+            return ModifyAnimationClip(clip, sprites, document, loopTime, targetType, propertyName);
         }
 
-        public AnimationClip ModifyAnimationClip(AnimationClip clip, Sprite[] sprites, XDocument document,bool containsLoopName)
+        public AnimationClip ModifyAnimationClip(AnimationClip clip, Sprite[] sprites, XDocument document,bool containsLoopName,Type targetType,string propertyName)
         {
             var objectReferenceKeyframes = GetAnimationData(document, sprites).ToArray();
             
@@ -30,7 +31,7 @@ namespace AutoEdge2Slice.Editor
             var frameTime = 1 / clip.frameRate;
             objectReferenceKeyframes[objectReferenceKeyframes.Length - 1].time -= frameTime;
 
-            var editorCurveBinding = EditorCurveBinding.PPtrCurve("", typeof(SpriteRenderer), "m_Sprite");
+            var editorCurveBinding = EditorCurveBinding.PPtrCurve("", targetType, propertyName);
             AnimationUtility.SetObjectReferenceCurve(clip, editorCurveBinding, objectReferenceKeyframes);
             var settings = AnimationUtility.GetAnimationClipSettings(clip);
             if (containsLoopName)

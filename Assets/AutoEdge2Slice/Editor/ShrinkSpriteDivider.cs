@@ -4,7 +4,10 @@ using UnityEngine;
 
 namespace AutoEdge2Slice.Editor
 {
-    internal class SpriteDivider
+    /// <summary>
+    /// SpriteのAlphaが最小になるようにSpriteRectを決定する。
+    /// </summary>
+    internal class ShrinkSpriteDivider
     {
         private readonly ISpriteEditorDataProvider _spriteEditorDataProvider;
         private readonly ITextureDataProvider _textureDataProvider;
@@ -96,7 +99,7 @@ namespace AutoEdge2Slice.Editor
 
         }
         
-        public SpriteDivider(ISpriteEditorDataProvider spriteEditorDataProvider, string parentName)
+        public ShrinkSpriteDivider(ISpriteEditorDataProvider spriteEditorDataProvider, string parentName)
         {
             _spriteEditorDataProvider = spriteEditorDataProvider;
             _parentName = parentName;

@@ -135,7 +135,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bed_0
+      name: CloseUpBed_0
       rect:
         serializedVersion: 2
         x: 0
@@ -165,14 +165,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 30b2d80b6a3c3bc4c8d152c306d66875
-      internalID: 2122107185238573207
+      spriteID: eb3c363a95954544caa802027cda80b7
+      internalID: -1177651436
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bed_1
+      name: CloseUpBed_1
       rect:
         serializedVersion: 2
         x: 0
@@ -202,14 +202,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cdee22344fb27e649ba7ff2a53b3511b
-      internalID: 6539804971861213079
+      spriteID: ae57ac00c37d7c84fb4516c40afdcd3f
+      internalID: 1579711877
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bed_2
+      name: CloseUpBed_2
       rect:
         serializedVersion: 2
         x: 0
@@ -239,14 +239,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b45bae578727a2a45b91fc815fd156ee
-      internalID: 9015965631283994615
+      spriteID: 53230a2163082be4e8108956553384b9
+      internalID: 1091140996
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bed_3
+      name: CloseUpBed_3
       rect:
         serializedVersion: 2
         x: 0
@@ -276,8 +276,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f78a8b36219dea40bc93ec0716f8263
-      internalID: -898222207937306033
+      spriteID: c12d04bf9123a5a4ca692c76dddadf91
+      internalID: -383571612
       vertices: []
       indices: 
       edges: []

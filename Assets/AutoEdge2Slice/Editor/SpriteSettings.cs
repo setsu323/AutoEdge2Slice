@@ -9,17 +9,17 @@ namespace AutoEdge2Slice.Editor
     {
         [SerializeField]
         private TextureImporterCompression _textureImporterCompression = TextureImporterCompression.Uncompressed;
-        [SerializeField]
-        private FilterMode _filterMode = FilterMode.Point;
-        [SerializeField]
-        private float _pixelPerUnit = 64;
-        [SerializeField]
-        private int _maxTextureSize = 16384;
-
-        [SerializeField]
-        private string _outlineGeneratorFactoryType;
-
+        [SerializeField] private FilterMode _filterMode = FilterMode.Point;
+        [SerializeField] private float _pixelPerUnit = 64;
+        [SerializeField] private int _maxTextureSize = 16384;
+        [SerializeField] private string _outlineGeneratorFactoryType;
         [SerializeField] private bool _useSpriteAutoImport = true;
+        [SerializeField] private TargetComponentType targetComponent;
+        internal enum TargetComponentType
+        {
+            SpriteRenderer,
+            Image,
+        }
         public bool UseSpriteAutoImport => _useSpriteAutoImport;
         private Object _outlineGeneratorFactory;
 
@@ -27,6 +27,7 @@ namespace AutoEdge2Slice.Editor
         public FilterMode FilterMode => _filterMode;
         public float PixelPerUnit => _pixelPerUnit;
         public int MaxTextureSize => _maxTextureSize;
+        internal TargetComponentType TargetComponent => targetComponent;
         public IOutlineGeneratorFactory OutlineGeneratorFactory
         {
             get

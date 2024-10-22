@@ -17,3 +17,5 @@ MonoBehaviour:
   _pixelPerUnit: 64
   _maxTextureSize: 16384
   _outlineGeneratorFactoryType: VerticalSplitOutlineGeneratorFactory
+  _useSpriteAutoImport: 1
+  targetComponent: 1

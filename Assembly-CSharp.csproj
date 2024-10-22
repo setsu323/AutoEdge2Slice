@@ -43,7 +43,7 @@
   <ItemGroup>
     <None Include="Assets\Samples\Ejaculation.xml" />
     <None Include="Assets\AutoEdge2Slice\package.json" />
-    <None Include="Assets\Samples\bed.xml" />
+    <None Include="Assets\Samples\CloseUpBed.xml" />
     <None Include="Assets\Samples\Swimsuit1Succubus.xml" />
     <None Include="Assets\Samples\Loop.xml" />
     <None Include="Assets\Samples\SwimsuitSuccubus.xml" />

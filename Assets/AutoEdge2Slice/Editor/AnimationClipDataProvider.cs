@@ -2,6 +2,7 @@ using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
+using AutoEdge2Slice.Editor.Main;
 using UnityEditor;
 using UnityEngine;
 
