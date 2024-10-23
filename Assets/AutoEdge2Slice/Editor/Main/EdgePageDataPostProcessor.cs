@@ -119,22 +119,5 @@ namespace AutoEdge2Slice.Editor.Main
                 AssetDatabase.CreateAsset(clip, clipPath);
             }
         }
-        /// <summary>
-        /// Edge2のpadファイルの場合、テクスチャの設定をSpriteに変更する
-        /// </summary>
-        private void OnPreprocessTexture()
-        {
-            var textureImporter = assetImporter as TextureImporter;
-            Assert.IsNotNull(textureImporter);
-            var pageDataPath = Path.ChangeExtension(textureImporter.assetPath, "xml");
-            var guid = AssetDatabase.AssetPathToGUID(pageDataPath);
-            if (guid != "")
-            {
-                var spriteSettings = SpriteSettings.instance;
-                var spriteSettingWriter = new SpriteSettingsWriter(textureImporter,
-                    spriteSettings.TextureImporterCompression, spriteSettings.FilterMode, spriteSettings.PixelPerUnit, spriteSettings.MaxTextureSize);
-                spriteSettingWriter.WriteSpriteSetting();
-            }
-        }
     }
 }
