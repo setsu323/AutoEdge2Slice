@@ -7,14 +7,14 @@ namespace AutoEdge2Slice.Editor
     [FilePath("ProjectSettings/SpriteSettings.asset", FilePathAttribute.Location.ProjectFolder)]
     internal class SpriteSettings : ScriptableSingleton<SpriteSettings>
     {
-        [SerializeField]
-        private TextureImporterCompression _textureImporterCompression = TextureImporterCompression.Uncompressed;
+        [SerializeField] private TextureImporterCompression _textureImporterCompression = TextureImporterCompression.Uncompressed;
         [SerializeField] private FilterMode _filterMode = FilterMode.Point;
         [SerializeField] private float _pixelPerUnit = 64;
         [SerializeField] private int _maxTextureSize = 16384;
         [SerializeField] private string _outlineGeneratorFactoryType;
         [SerializeField] private bool _useSpriteAutoImport = true;
         [SerializeField] private TargetComponentType targetComponent;
+        [SerializeField] private string[] _targetPaths = {"Assets/Project/Character"};
         internal enum TargetComponentType
         {
             SpriteRenderer,
@@ -48,6 +48,9 @@ namespace AutoEdge2Slice.Editor
                 return _outlineGeneratorFactory as IOutlineGeneratorFactory;
             }
         }
+
+        public string[] TargetPaths => _targetPaths;
+
         private void OnEnable()
         {
             hideFlags &= ~HideFlags.NotEditable;

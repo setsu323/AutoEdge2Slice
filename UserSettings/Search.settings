@@ -10,10 +10,13 @@ showStatusBar = false
 scopes = {
 	"last_search.110DEAE9" = "mainprof"
 	"OpenInspectorPreview.110DEAE9" = "0"
-	"currentGroup.110DEAE9" = "asset"
+	"currentGroup.110DEAE9" = "scene"
 	"last_search.E8DA159D" = "mainprof"
 	"OpenInspectorPreview.E8DA159D" = "0"
 	"currentGroup.E8DA159D" = "asset"
+	"last_search.3BE40469" = "mainprof"
+	"OpenInspectorPreview.3BE40469" = "0"
+	"currentGroup.3BE40469" = "asset"
 }
 providers = {
 	packages = {

@@ -4,7 +4,6 @@ using System.IO;
 using System.Xml.Linq;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.Assertions;
 using UnityEngine.UI;
 
 namespace AutoEdge2Slice.Editor.Main
@@ -37,12 +36,27 @@ namespace AutoEdge2Slice.Editor.Main
             {
                 if (Path.GetExtension(importedAssetPath) == ".xml")
                 {
+                    //TargetPathsに含まれるパスが含まれているかを確認し、
+                    //含まれていない場合は処理をスキップする。
+                    var isTarget = false;
+                    foreach (var targetPath in SpriteSettings.instance.TargetPaths)
+                    {
+                        if (importedAssetPath.Contains(targetPath))
+                        {
+                            isTarget = true;
+                            break;
+                        }
+                    }
+                    if (!isTarget) continue;
+                    
                     //Edgeのページデータかを判定する
                     var document = XDocument.Parse(File.ReadAllText(importedAssetPath));
                     if (document.Root != null && document.Root.Name == ExportedMark)
                     {
                         var currentType = defaultTargetComponentType;
                         if (importedAssetPath.Contains("CloseUp")) currentType = typeof(Image);
+                        
+
                         SpriteAssetImporter.ImportSpriteAsset(importedAssetPath, currentType != typeof(Image));
                         
                         //上で分割を行うため、Postprocessの段階ではまだSpriteアセットの設定が為されていない。
